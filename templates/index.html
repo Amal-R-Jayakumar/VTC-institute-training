@@ -1,0 +1,2327 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block base %}
+{% include 'navbar.html' %}
+
+
+<!-- Preloader Start -->
+<div class="preloader">
+    <img src="{% static 'assets/images/preloader.svg' %}" alt="preloader">
+    </div>
+    <!-- Preloader End -->
+
+ <!-- partial:index.partial.html -->
+
+<div class=" whats-float">
+    <a href="https://wa.me/+919072151980">
+        <i class="fab fa-whatsapp"></i><span>WhatsApp<br><small>+91 9072151980</small></span>
+    </a>
+</div>
+<!-- partial -->
+
+
+            <div class="head_actions">
+                <!-- Search
+                <ul class="main-menu">
+                <li class="menu-item menu-item-has-children">
+                        <!--<a href="#">Login</a>-->
+                <!-- <button class="thm-btn-login thm-btn bg-thm-color-two btn-rounded mr-4 mb-2 wow fadeInRight">Login</button>
+                 <ul class="sub-menu">
+                     <li class="menu-item">
+                         <a href="#">Student</a>
+                     </li>
+                     <li class="menu-item">
+                         <a href="#">VTC</a>
+                     </li>
+                     <li class="menu-item">
+                         <a href="#">Admin</a>
+                     </li>
+                 </ul>
+             </li>
+             </ul>
+             -->
+                <button type="button" class="head_trigger desktop_trigger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <button type="button" class="head_trigger mobile_trigger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <!-- Head Actions -->
+        </div>
+        <!-- inner -->
+    </div>
+</header>
+<!-- Header End -->
+<!--modal starts here-->
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header" style="border-bottom: 0px;padding: 1rem 2rem;">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <div class="btn"><span class="text-danger" style="font-size: 30px; color:black!important;">×</span>
+                    </div>
+                </button>
+            </div>
+            <div class="modal-body pt-0">
+                <div class="row mb-3" style="margin-top: -35px;">
+                    <img src="{% static 'assets/images/Rutronix C Logo.svg' %}" width="50%" class="img-fluid d-block mx-auto">
+            <!--<p class=" heading lead text-center">Enquire Now</p>-->
+                </div>
+                <div class="row">
+                    <img src="{% static 'assets/images/V form Logo.svg' %}" width="35%" style="margin-top:40px;" class="img-fluid d-block mx-auto">
+          </div>
+          <div class=" text-center mb-3">
+                    <small style="font-weight: 2px;">ENQUIRE NOW</small>
+                </div>
+                <form method="POST" action="" id="enquiryform" name="enquiryform">
+                    {% csrf_token %}
+                     {% if error_message %}
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            {{ error_message }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                     {% endif %}
+                    <div class="row" id="blemish">
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-user" aria-hidden="true"></i> </span>
+                            </div>
+                            <input type="text" class="form-control" id="fname" placeholder="Full Name" name="fname"
+                                   required>
+                        </div>
+                    </div>
+                    <div class="row" id="blemish">
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-envelope"
+                                                                   aria-hidden="true"></i> </span>
+                            </div>
+                            <input type="email" class="form-control" id="email" placeholder="Email Address" name="email"
+                                   required>
+                        </div>
+                    </div>
+                    <div class="row" id="blemish">
+                        <div class=" form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-phone" aria-hidden="true"></i></span>
+                            </div>
+                            <select class="custom-select" style="max-width: 80px;" name="phone_code" id="phone_code"
+                                    required>
+                                <option selected="" value="91">+91</option>
+                                <option value="92">+92</option>
+                                <option value="98">+98</option>
+                                <option value="90">+90</option>
+                            </select>
+                            <input type="text" class="form-control" placeholder="Mobile Number" maxlength="15"
+                                   minlength="10" aria-label="Text input with segmented dropdown button"
+                                   id="mobile_number"
+                                   name="mobile_number" required>
+                        </div>
+                    </div>
+                    <div class="row" id="blemish">
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
+                            </div>
+                            <select class="form-control" name="course_interested" id="course_interested" required>
+                                <option label="Course Interested In"></option>
+                                <option value="PSC SSLC Level Preliminary Exam">SSLC Level Preliminary Exam</option>
+                                <option value="PSC SSLC Level Main Exam">SSLC Level Main Exam</option>
+                                <option value="PSC Plus-Two Level Preliminary Exam">Plus-Two Level Preliminary Exam
+                                </option>
+
+                                <option value="PSC Plus-Two Level Main Exam">Plus-Two Level Main Exam</option>
+                                <option value="PSC Degree Level Preliminary Exam">Degree Level Preliminary Exam</option>
+                                <option value="PSC Degree Level Main Exam">Degree Level Main Exam</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row" id="blemish">
+                        <div class="input-group" style="padding-bottom:10px;">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-map-marker"
+                                                                   aria-hidden="true"></i> </span>
+                            </div>
+                            <input type="text" class="form-control" id="place_of_study" placeholder="Opted study centre"
+                                   name="place_of_study">
+                        </div>
+                    </div>
+                    <div class="row" id="blemish">
+                        <p style="margin-bottom:15px!important;"><small style="line-height: .5rem;"><input
+                                type="checkbox"> Submitting this form, you accept and agree to our <a href="#">Terms of
+                            Use</a></small></p>
+                        <div class="d-block mx-auto">
+                            <button type="submit" name="button1" id="button1" data-rule-minlength="4"
+                                    class="bg-thm-color-two btn text-center text-light pl-4 pr-4 mb-4">SUBMIT
+                            </button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+<!-- Banner Start -->
+<div class="banner relative z-1">
+    <img src="{% static 'assets/images/banner/element_1.png' %}" class="element_1" alt="Element">
+        <img src="{% static 'assets/images/banner/element_line.png' %}" class="element_line" alt="Element Line">
+    <!-- Texts -->
+    <div class="transform-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="text_box">
+                        <!--<h1 class="title wow fadeInUp rut" data-wow-delay=".30ms">KERALA STATE <br>RUTRONIX</h1>-->
+                        <h1 class="title wow fadeInU comp" data-wow-delay=".30ms"><span></span>Comprehensive <br>
+                            Coaching <br>for Govt. Jobs</h1>
+                        <!--<p class="wow fadeInUp" data-wow-delay=".40ms">For Better Career, Learn Better from the Best Educators</p>-->
+                        <a class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rounded mr-4 mb-4 wow fadeInRight"
+                           id="btn-form9" data-wow-delay=".50ms">Get Admission <i class="fal fa-chevron-right ml-2"></i></a>
+                        <a href="https://www.youtube.com/watch?v=TKnufs85hXk"
+                           class="video_btn video_text popup-youtube mb-4  wow fadeInRight" data-wow-delay=".70ms">
+                            <i class="fas fa-play video_icon bg-thm-color-three"></i>
+                            <span>Watch Videos</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="image_box relative wow fadeInRight" data-wow-delay=".80ms">
+                        <img src="{% static 'assets/images/banner/image-5.png' %}" alt="img" class="image-fit">
+                            <span class=" bg-thm-color-three circle_element"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bottom Line -->
+    <div class="bottom-line container"></div>
+</div>
+<!-- Banner End -->
+<!-- Sponsors Start
+<div class="section-padding2">
+<div class="container">
+ <div class="row justify-content-around">
+     <div class="col-auto">
+         <div class="sponsors_img">
+             <img src="assets/images/sponsors/kerala-psc-logo.png" alt="img">
+         </div>
+     </div>
+     <div class="col-auto">
+         <div class="sponsors_img">
+             <img src="assets/images/sponsors/ssc_icon-p8fd4anji7mrcali4lto5oapz62e8d0hy3jwfj51bc.png" alt="img">
+         </div>
+     </div>
+     <div class="col-auto">
+         <div class="sponsors_img">
+             <img src="assets/images/sponsors/railways_icon-p8fde7u7n97pw46o6w7wh65vpl5vhcehz7gesoffmw.png" alt="img">
+         </div>
+     </div>
+     <div class="col-auto">
+         <div class="sponsors_img">
+             <img src="assets/images/sponsors/isro_icon-p8fddxhzk2tkcelov9r07qrt6cku4o9g9sa2imurjc.png" alt="img">
+         </div>
+     </div>
+     <div class="col-auto">
+         <div class="sponsors_img">
+             <img src="assets/images/sponsors/Banking.png" alt="img">
+         </div>
+     </div>
+ </div>
+</div>
+</div>
+Sponsors End -->
+<!-- Plane Start -->
+<div class="bg-thm-color-two plane_box relative z-1">
+    <div class="container relative z-1">
+        <div class="row justify-content-center">
+            <div class="col-xl-9 col-lg-8 relative z-1">
+                <img src="{% static 'assets/images/elements/element_6.png' %}" class="element_1 rotate_elem" alt="Element">
+                    <h2 class=" thm-color-white"><span class="adgo">Admission going on </span> <span
+                    class="countdown-timer timer" style="color:White; font-weight:400; font-family:sans-serif;"
+                    data-countdown="2021/10/10">0</span></h2>
+
+            </div>
+            <div class="col-xl-3 col-lg-4 ">
+                <button type="submit" class="thm-btn bg-thm-color-three thm-color-three-shadow btn-rectangle"
+                        id="btn-form">Enroll Now <i class="fal fa-chevron-right ml-2"></i></button>
+            </div>
+        </div>
+        <img src="{% static 'assets/images/elements/element_7.png' %}" class="element_2 zoom-fade" alt="Element">
+        </div>
+    </div>
+    <!-- Plane End -->
+           <!-- brand-area-start 
+         <div class=" brand-area theme-bg pb-65 pt-65 section-padding2">
+        <div class="container">
+            <div class="row brand-active">
+                <div class="col-xl-2 text-center">
+                    <div class="single-brand text-center">
+                        <img src="{% static 'assets/images/sponsors/kerala-psc-logo.png' %}" alt="">
+                        </div>
+                    </div>
+                    <div class=" col-xl-2 text-center">
+                        <div class="single-brand">
+                            <img src="{% static 'assets/images/sponsors/ssc_icon-p8fd4anji7mrcali4lto5oapz62e8d0hy3jwfj51bc.png' %}" alt="">
+                        </div>
+                    </div>
+                    <div class=" col-xl-2 text-center">
+                            <div class="single-brand">
+                                <img src="{% static 'assets/images/sponsors/railways_icon-p8fde7u7n97pw46o6w7wh65vpl5vhcehz7gesoffmw.png' %}" alt="">
+                        </div>
+                    </div>
+                    <div class=" col-xl-2 text-center">
+                                <div class="single-brand">
+                                    <img src="{% static 'assets/images/sponsors/isro_icon-p8fddxhzk2tkcelov9r07qrt6cku4o9g9sa2imurjc.png' %}" alt="">
+                        </div>
+                    </div>
+                    <div class=" col-xl-2 text-center">
+                                    <div class="single-brand">
+                                        <img src="{% static 'assets/images/sponsors/Banking.png' %}" alt="">
+                        </div>
+                    </div>
+                    <div class=" col-xl-2 text-center">
+                                        <div class="single-brand">
+                                            <img src="{% static 'assets/images/sponsors/upsc_logo_650_061615112739.jpg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         brand-area-end -->
+           <!-- Pricing Start -->
+    <section class=" pricing_sec section" style="padding-bottom:70px;">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="section-title wow fadeInDown">
+                                                            <p class="subtitle">
+                                                                <i class="fal fa-book"></i>
+                                                                Our Courses
+                                                            </p>
+                                                            <h3 class="title">Vijayaveedhi PSC Coaching Programs</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <ul class="nav nav-tabs style_1 border-0 justify-content-center wow fadeInRight">
+                                                            <li class="nav-item">
+                                                                <a href="#monthly"
+                                                                   class="nav-link mb-0 border-0 thm-btn bg-thm-color-one  btn-rectangle active"
+                                                                   data-toggle="tab">PRELIMS<i
+                                                                        class="fal fa-chevron-right ml-2"></i></a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a href="#yearly"
+                                                                   class="nav-link mb-0 border-0 thm-btn bg-thm-color-one btn-rectangle"
+                                                                   data-toggle="tab"> MAIN <i
+                                                                        class="fal fa-chevron-right ml-2"></i></a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="tab-content wow fadeInDown">
+                                                            <div class="tab-pane fade active show" id="monthly">
+                                                                <div class="row no-gutters justify-content-center">
+                                                                    <div class="col-lg-4 col-md-12">
+                                                                        <div class="plan_box">
+                                                                            <h4 class="plan_title">SSLC LEVEL</h4>
+                                                                            <p class="plan_subtext">PRELIMINARY EXAM
+                                                                                COACHING PROGRAM</p>
+                                                                            <h2 class="plan_price"
+                                                                                style="font-family:sans-serif;">
+                                                                                ₹4500<span style="font-size :25px;"> +TAX</span>
+                                                                            </h2>
+                                                                            <ul class="about_list style_2 mb-xl-25">
+                                                                                <li>
+                                                                                    General Knowledge
+                                                                                </li>
+                                                                                <li>
+                                                                                    Current affairs
+                                                                                </li>
+                                                                                <li>
+                                                                                    Renaissance in Kerala
+                                                                                </li>
+                                                                                <li>
+                                                                                    General Science
+                                                                                </li>
+                                                                                <li>
+                                                                                    Natural Science
+                                                                                </li>
+                                                                                <li>
+                                                                                    Physical Science
+                                                                                </li>
+                                                                                <li>
+                                                                                    Simple Arithmetic
+                                                                                </li>
+                                                                                <li>
+                                                                                    Mental ability
+                                                                                </li>
+                                                                                <br><br><br><br><br><br><br>
+                                                                            </ul>
+                                                                            <button type="submit"
+                                                                                    class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle un-btn"
+                                                                                    id="btn-form2">Enroll Now <i
+                                                                                    class="fal fa-chevron-right ml-2"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-4 col-md-12">
+                                                                        <div class="plan_box">
+                                                                            <h4 class="plan_title">PLUS TWO LEVEL</h4>
+                                                                            <p class="plan_subtext">PRELIMINARY EXAM
+                                                                                COACHING PROGRAM</p>
+                                                                            <h2 class="plan_price"
+                                                                                style="font-family:sans-serif;">
+                                                                                ₹5500<span style="font-size :25px;"> +TAX</span>
+                                                                            </h2>
+                                                                            <ul class="about_list style_2 mb-xl-25">
+                                                                                <li>
+                                                                                    Kerala/India History
+                                                                                </li>
+                                                                                <li>
+                                                                                    World History
+                                                                                </li>
+                                                                                <li>
+                                                                                    India/Kerala Geography
+                                                                                </li>
+                                                                                <li>
+                                                                                    Economics and Civics
+                                                                                </li>
+                                                                                <li>
+                                                                                    Biology/Physics
+                                                                                </li>
+                                                                                <li>
+                                                                                    Chemistry
+                                                                                </li>
+                                                                                <li>
+                                                                                    Computer Science
+                                                                                </li>
+                                                                                <li>
+                                                                                    Arts, Sports & Literature
+                                                                                </li>
+                                                                                <li>
+                                                                                    Simple Arithmetic
+                                                                                </li>
+                                                                                <li>
+                                                                                    Mental Ability
+                                                                                </li>
+                                                                                <li>
+                                                                                    English/Malayalam
+                                                                                </li>
+                                                                                <br>
+                                                                            </ul>
+                                                                            <button type="submit"
+                                                                                    class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle btn-prelims-2"
+                                                                                    id="btn-form3">Enroll Now <i
+                                                                                    class="fal fa-chevron-right ml-2"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-4 col-md-12">
+                                                                        <div class="plan_box">
+                                                                            <h4 class="plan_title">DEGREE LEVEL</h4>
+                                                                            <p class="plan_subtext">PRELIMINARY EXAM
+                                                                                COACHING PROGRAM</p>
+                                                                            <h2 class="plan_price"
+                                                                                style="font-family:sans-serif;">
+                                                                                ₹6500<span style="font-size :25px;"> +TAX</span>
+                                                                            </h2>
+                                                                            <ul class="about_list style_2 mb-xl-25">
+                                                                                <li>
+                                                                                    Kerala/India History
+                                                                                </li>
+                                                                                <li>
+                                                                                    World History
+                                                                                </li>
+                                                                                <li>
+                                                                                    India/Kerala Geography
+                                                                                </li>
+                                                                                <li>
+                                                                                    Economics and Civics
+                                                                                </li>
+                                                                                <li>
+                                                                                    Indian Constitution
+                                                                                </li>
+                                                                                <li>
+                                                                                    Arts, Sports & Literature
+                                                                                </li>
+                                                                                <li>
+                                                                                    Science and Technology
+                                                                                </li>
+                                                                                <li>
+                                                                                    Computer Science
+                                                                                </li>
+                                                                                <li>
+                                                                                    Simple Arithmetic
+                                                                                </li>
+                                                                                <li>
+                                                                                    Mental Ability
+                                                                                </li>
+                                                                                <li>
+                                                                                    English/Malayalam
+                                                                                </li>
+                                                                                <br>
+                                                                            </ul>
+                                                                            <button type="submit"
+                                                                                    class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"
+                                                                                    id="btn-form4">Enroll Now <i
+                                                                                    class="fal fa-chevron-right ml-2"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-pane fade" id="yearly">
+                                                                <div class="row no-gutters justify-content-center">
+                                                                    <div class="col-lg-4 col-md-6">
+                                                                        <div class="plan_box ">
+                                                                            <h4 class="plan_title">SSLC LEVEL</h4>
+                                                                            <p class="plan_subtext">MAIN EXAM COACHING
+                                                                                PROGRAM</p>
+                                                                            <h2 class="plan_price"
+                                                                                style="font-family:sans-serif;">
+                                                                                ₹4500<span style="font-size :30px;"> +TAX</span>
+                                                                            </h2>
+                                                                            <ul class="about_list style_2 mb-xl-30">
+                                                                                <li>
+                                                                                    General Knowledge
+                                                                                </li>
+                                                                                <li>
+                                                                                    Quantitative Aptitude
+                                                                                </li>
+                                                                                <li>
+                                                                                    Simple Arithmetic
+                                                                                </li>
+                                                                                <li>
+                                                                                    Mental ability
+                                                                                </li>
+                                                                                <li>
+                                                                                    Logical Reasoning
+                                                                                </li>
+                                                                                <li>
+                                                                                    General English
+                                                                                </li>
+                                                                                <br><br><br><br><br><br><br>
+                                                                            </ul>
+                                                                            <button type="submit"
+                                                                                    class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle un-btn2"
+                                                                                    id="btn-form5">Enroll Now <i
+                                                                                    class="fal fa-chevron-right ml-2"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-4 col-md-6">
+                                                                        <div class="plan_box ">
+                                                                            <h4 class="plan_title">PLUS TWO LEVEL</h4>
+                                                                            <p class="plan_subtext">MAIN EXAM COACHING
+                                                                                PROGRAM</p>
+                                                                            <h2 class="plan_price"
+                                                                                style="font-family:sans-serif;">
+                                                                                ₹5500<span style="font-size :30px;"> +TAX</span>
+                                                                            </h2>
+                                                                            <ul class="about_list style_2 mb-xl-30">
+                                                                                <li>
+                                                                                    General Knowledge
+                                                                                </li>
+                                                                                <li>
+                                                                                    Current affairs
+                                                                                </li>
+                                                                                <li>
+                                                                                    General English
+                                                                                </li>
+                                                                                <li>
+                                                                                    Vocabulary
+                                                                                </li>
+                                                                                <li>
+                                                                                    Simple Arithmetic
+                                                                                </li>
+                                                                                <li>
+                                                                                    Mental ability
+                                                                                </li>
+                                                                                <br><br><br><br><br><br><br>
+                                                                            </ul>
+                                                                            <button type="submit"
+                                                                                    class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle btn-main2"
+                                                                                    id="btn-form6">Enroll Now <i
+                                                                                    class="fal fa-chevron-right ml-2"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-4 col-md-6">
+                                                                        <div class="plan_box">
+                                                                            <h4 class="plan_title">DEGREE LEVEL</h4>
+                                                                            <p class="plan_subtext">MAIN EXAM COACHING
+                                                                                PROGRAM</p>
+                                                                            <h2 class="plan_price"
+                                                                                style="font-family:sans-serif;">
+                                                                                ₹6500<span style="font-size :30px;"> +TAX</span>
+                                                                            </h2>
+                                                                            <ul class="about_list style_2 mb-xl-30">
+                                                                                <li>
+                                                                                    Quantitative Aptitude
+                                                                                </li>
+                                                                                <li>
+                                                                                    Mental ability
+                                                                                </li>
+                                                                                <li>
+                                                                                    Test of Reasoning
+                                                                                </li>
+                                                                                <li>
+                                                                                    General Science
+                                                                                </li>
+                                                                                <li>
+                                                                                    Current Affairs
+                                                                                </li>
+                                                                                <li>
+                                                                                    Facts about India/Kerala
+                                                                                </li>
+                                                                                <li>
+                                                                                    Renaissance of Kerala
+                                                                                </li>
+                                                                                <li>
+                                                                                    Constitution of India
+                                                                                </li>
+                                                                                <li>
+                                                                                    Civil Rights
+                                                                                </li>
+                                                                                <li>
+                                                                                    General English
+                                                                                </li>
+
+                                                                            </ul>
+                                                                            <button type="submit"
+                                                                                    class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"
+                                                                                    id="btn-form7">Enroll Now <i
+                                                                                    class="fal fa-chevron-right ml-2"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </section>
+                                            <!-- Pricing End -->
+                                            <!-- Coach box Start
+                                        <section class="section pt-0 wide_fluid_container">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="section-title wow fadeInDown">
+                                                            <p class="subtitle">
+                                                                <i class="fal fa-book"></i>
+                                                                Vijayaveedhi Books
+                                                            </p>
+                                                            <!--<h3 class="title">Vijayaveedhi Books</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="coach_slider row">
+                                                    <!-- Coach block
+                                                    <div class="col-12 slide-item">
+                                                        <div class="coach_block">
+                                                            <div class="main">
+                                                                <ul id="bk-list" class="bk-list clearfix">
+                                                                    <li>
+                                                                        <div class="bk-book book-1 bk-bookdefault">
+                                                                            <div class="bk-front">
+                                                                                <div class="bk-cover-back"></div>
+                                                                                <div class="bk-cover">
+                                                                                    <!--<h2>
+                                                                                        <span>LDC 2021</span>
+                                                                                        <span>Rank File</span>
+                                                                                    </h2>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="bk-right"></div>
+                                                                            <div class="bk-left">
+                                                                                <h2>
+                                                                                    <span style="font-family:arial; font-weight:400;">LDC 2021</span>
+                                                                                    <span style="font-family:arial; font-weight:400;">FACT FILE</span>
+                                                                                </h2>
+                                                                            </div>
+                                                                            <div class="bk-top"></div>
+                                                                            <div class="bk-bottom"></div>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Coach block -->
+                                            <!-- Coach block
+                                            <div class="col-12 slide-item">
+                                                <div class="coach_block">
+                                                    <div class="main">
+                                                        <ul id="bk-list" class="bk-list clearfix">
+                                                            <li>
+                                                                <div class="bk-book book-2 bk-bookdefault">
+                                                                    <div class="bk-front">
+                                                                        <div class="bk-cover-back"></div>
+                                                                        <div class="bk-cover">
+                                                                            <!--<h2>
+                                                                                <span>LDC 2021</span>
+                                                                                <span>Rank File</span>
+                                                                            </h2>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="bk-right"></div>
+                                                                    <div class="bk-left">
+                                                                        <h2>
+                                                                            <span style="font-family:arial; font-weight:400;">KAS 2021</span>
+                                                                            <span style="font-family:arial; font-weight:400;">SPECIAL EDITION</span>
+                                                                        </h2>
+                                                                    </div>
+                                                                    <div class="bk-top"></div>
+                                                                    <div class="bk-bottom"></div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Coach block -->
+                                            <!-- Coach block
+                                            <div class="col-12 slide-item">
+                                                <div class="coach_block" style="height:400px;">
+                                                    <div class="main">
+                                                        <ul id="bk-list" class="bk-list clearfix">
+                                                            <li>
+                                                                <div class="bk-book book-3 bk-bookdefault">
+                                                                    <div class="bk-front">
+                                                                        <div class="bk-cover-back"></div>
+                                                                        <div class="bk-cover">
+                                                                            <!--<h2>
+                                                                                <span>LDC 2021</span>
+                                                                                <span>Rank File</span>
+                                                                            </h2>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="bk-right"></div>
+                                                                    <div class="bk-left">
+                                                                        <h2>
+                                                                            <span style="font-family:sans-serif;"></span>
+                                                                            <span style="font-family:arial; font-weight:400;">ENGLISH FOR COMPETITIVE EXAMS</span>
+                                                                        </h2>
+                                                                    </div>
+                                                                    <div class="bk-top"></div>
+                                                                    <div class="bk-bottom"></div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Coach block -->
+                                            <!-- Coach block
+                                            <div class="col-12 slide-item">
+                                                <div class="coach_block" style="height:400px;">
+                                                    <div class="main">
+                                                        <ul id="bk-list" class="bk-list clearfix">
+                                                            <li>
+                                                                <div class="bk-book book-4 bk-bookdefault">
+                                                                    <div class="bk-front">
+                                                                        <div class="bk-cover-back"></div>
+                                                                        <div class="bk-cover">
+                                                                            <!--<h2>
+                                                                                <span>LDC 2021</span>
+                                                                                <span>Rank File</span>
+                                                                            </h2>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="bk-right"></div>
+                                                                    <div class="bk-left">
+                                                                        <h2>
+                                                                            <span style="font-family:sans-serif;"></span>
+                                                                            <span style="font-family:arial; font-weight:400;">QUESTIONS AND ANSWERS</span>
+                                                                        </h2>
+                                                                    </div>
+                                                                    <div class="bk-top"></div>
+                                                                    <div class="bk-bottom"></div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Coach block
+
+
+
+
+                                        </div>
+                                    </div>
+                                </section>
+                                <!-- Coach box End -->
+
+                                            <!-- Testimonials Start -->
+                                            <section class="section-bg relative z-1" style="margin-bottom:60px;">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="section-title wow fadeInDown">
+                                                                <p class="subtitle">
+                                                                    <i class="fal fa-book"></i>
+                                                                    Vijayaveedhi Books
+                                                                </p>
+                                                                <!--<h3 class="title">Vijayaveedhi Books</h3>-->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="testimonial_slider style_2 row wow fadeInUp">
+                                                        <!-- Testimonial Item -->
+                                                        <div class="slide-item col-12" style="height:400px;">
+                                                            <div class="main">
+                                                                <ul id="bk-list" class="bk-list clearfix">
+                                                                    <li>
+                                                                        <div class="bk-book book-1 bk-bookdefault">
+                                                                            <div class="bk-front">
+                                                                                <div class="bk-cover-back"></div>
+                                                                                <div class="bk-cover">
+                                                                                    <!--<h2>
+                                                                                        <span>LDC 2021</span>
+                                                                                        <span>Rank File</span>
+                                                                                    </h2>-->
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="bk-right"></div>
+                                                                            <div class="bk-left">
+                                                                                <h2>
+                                                                                    <span style="font-family:arial; font-weight:400;">LDC 2021</span>
+                                                                                    <span style="font-family:arial; font-weight:400;">FACT FILE</span>
+                                                                                </h2>
+                                                                            </div>
+                                                                            <div class="bk-top"></div>
+                                                                            <div class="bk-bottom"></div>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Testimonial Item -->
+                                                        <!-- Testimonial Item -->
+                                                        <div class="slide-item col-12" style="height:400px;">
+                                                            <div class="main">
+                                                                <ul id="bk-list" class="bk-list clearfix">
+                                                                    <li>
+                                                                        <div class="bk-book book-2 bk-bookdefault">
+                                                                            <div class="bk-front">
+                                                                                <div class="bk-cover-back"></div>
+                                                                                <div class="bk-cover">
+                                                                                    <!--<h2>
+                                                                                        <span>LDC 2021</span>
+                                                                                        <span>Rank File</span>
+                                                                                    </h2>-->
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="bk-right"></div>
+                                                                            <div class="bk-left">
+                                                                                <h2>
+                                                                                    <span style="font-family:arial; font-weight:400;">KAS 2021</span>
+                                                                                    <span style="font-family:arial; font-weight:400;">SPECIAL EDITION</span>
+                                                                                </h2>
+                                                                            </div>
+                                                                            <div class="bk-top"></div>
+                                                                            <div class="bk-bottom"></div>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Testimonial Item -->
+                                                        <!-- Testimonial Item -->
+                                                        <div class="slide-item col-12" style="height:400px;">
+                                                            <div class="main">
+                                                                <ul id="bk-list" class="bk-list clearfix">
+                                                                    <li>
+                                                                        <div class="bk-book book-3 bk-bookdefault">
+                                                                            <div class="bk-front">
+                                                                                <div class="bk-cover-back"></div>
+                                                                                <div class="bk-cover">
+                                                                                    <!--<h2>
+                                                                                        <span>LDC 2021</span>
+                                                                                        <span>Rank File</span>
+                                                                                    </h2>-->
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="bk-right"></div>
+                                                                            <div class="bk-left">
+                                                                                <h2>
+                                                                                    <span style="font-family:sans-serif;"></span>
+                                                                                    <span style="font-family:arial; font-weight:400;">ENGLISH FOR COMPETITIVE EXAMS</span>
+                                                                                </h2>
+                                                                            </div>
+                                                                            <div class="bk-top"></div>
+                                                                            <div class="bk-bottom"></div>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Testimonial Item -->
+                                                        <!-- Testimonial Item -->
+                                                        <div class="slide-item col-12" style="height:400px;">
+                                                            <div class="main">
+                                                                <ul id="bk-list" class="bk-list clearfix">
+                                                                    <li>
+                                                                        <div class="bk-book book-4 bk-bookdefault">
+                                                                            <div class="bk-front">
+                                                                                <div class="bk-cover-back"></div>
+                                                                                <div class="bk-cover">
+                                                                                    <!--<h2>
+                                                                                        <span>LDC 2021</span>
+                                                                                        <span>Rank File</span>
+                                                                                    </h2>-->
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="bk-right"></div>
+                                                                            <div class="bk-left">
+                                                                                <h2>
+                                                                                    <span style="font-family:sans-serif;"></span>
+                                                                                    <span style="font-family:arial; font-weight:400;">QUESTIONS AND ANSWERS</span>
+                                                                                </h2>
+                                                                            </div>
+                                                                            <div class="bk-top"></div>
+                                                                            <div class="bk-bottom"></div>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Testimonial Item -->
+                                                    </div>
+                                                </div>
+                                            </section>
+                                            <!-- Testimonials End -->
+
+                                            <!-- Why Us Start -->
+                                            <section class=" about">
+                                                <div class="container">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-xl-5">
+                                                            <div class="section-title left-align wow fadeInDown">
+                                                                <p class="subtitle">
+                                                                    <i class="fal fa-book"></i>
+                                                                    What We Offer
+                                                                </p>
+                                                                <h3 class="title" style="font-size:35px;">KERALA STATE
+                                                                    RUTRONIX VIJAYAVEEDHI</h3>
+                                                                <p>
+                                                                    The "Vijayaveedhi" training project has been
+                                                                    designed by KERALA STATE RUTRONIX for imparting
+                                                                    training to the employment seekers for attending
+                                                                    various competitive examinations for the
+                                                                    recruitment's conducted by Kerala PSC.
+
+                                                                </p>
+                                                            </div>
+                                                            <div class="section-title left-align wow fadeInDown"
+                                                                 style="padding-bottom:10px">
+                                                                <p class="subtitle">
+                                                                    <i class="fal fa-book"></i>
+                                                                    upcoming programs
+                                                                </p>
+                                                            </div>
+                                                            <ul class="why-us-list">
+                                                                <li class="wow fadeInUp">
+                                                                    <i class="icon fal fa-check"></i>
+                                                                    <div class="text upcomming">
+                                                                        <h6 class="mb-2" style="margin:0!important;">
+                                                                            Union Public Service Commission (UPSC)</h6>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="wow fadeInUp">
+                                                                    <i class="icon fal fa-check"></i>
+                                                                    <div class="text upcomming">
+                                                                        <h6 class="mb-2" style="margin:0!important;">
+                                                                            Staff Selection Commission (SSC)</h6>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="wow fadeInUp">
+                                                                    <i class="icon fal fa-check"></i>
+                                                                    <div class="text upcomming">
+                                                                        <h6 class="mb-2" style="margin:0!important;">
+                                                                            Banking Service Recruitment Board</h6>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="wow fadeInUp">
+                                                                    <i class="icon fal fa-check"></i>
+                                                                    <div class="text upcomming">
+                                                                        <h6 class="mb-2" style="margin:0!important;">
+                                                                            Railway Recruitment Board</h6>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="wow fadeInUp">
+                                                                    <i class="icon fal fa-check"></i>
+                                                                    <div class="text upcomming">
+                                                                        <h6 class="mb-2" style="margin:0!important;">
+                                                                            Other Govt./Public Sector Agencies and
+                                                                            Bodies etc.</h6>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-xl-7">
+                                                            <div class="image_box relative why_us_box mb-0 wow fadeInRight">
+                                                                <img src="{% static 'assets/images/05.png' %}" style="position:relative; right: -25px; bottom: -1px;"alt="img" class="image-fit">
+                        <span class=" bg-thm-color-three circle_element"></span>
+                                                                <img src="{% static 'assets/images/elements/element_3.png' %}" class="element_1 zoom-fade" alt="Element">
+                        <img src="{% static 'assets/images/elements/element_4.png' %}" class="element_2 rotate_elem" alt="Element">
+                                                                <img src="{% static 'assets/images/elements/element_5.png' %}" class="element_3 rotate_elem" alt="Element">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Why Us End -->
+ 
+       <!-- Video Quote Start
+    <section class=" bg-thm-color-two-gradient z-1 video_quote">
+                                                                <img src="{% static 'assets/images/elements/element_2.png' %}" class="element_2" alt="Element">
+        <div class=" container-fluid p-0">
+                                                                <div class="row no-gutters align-items-center">
+                                                                    <div class="col-lg-6">
+                                                                        <div class="video_warp relative z-1 h-100">
+                                                                            <img src="{% static 'assets/images/video_img_3.png' %}" alt="img" class="image-fit">
+                        <a href=" https://www.youtube.com/watch?v=TKnufs85hXk" class="popup-youtube video_btn
+                                                                            transform-center justify-content-center
+                                                                            d-flex style_2">
+                                                                            <i class="fas fa-play video_icon bg-thm-color-three pulse-animated"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-6">
+                                                                        <div class="arrows slideRight">
+                                                                            <div class="arrow"></div>
+                                                                            <div class="arrow"></div>
+                                                                            <div class="arrow"></div>
+                                                                            <div class="arrow"></div>
+                                                                            <div class="arrow"></div>
+                                                                        </div>
+                                                                        <img src="{% static 'assets/images/elements/element_11.png' %}" class="element_4 rotate_elem" alt="img">
+                    <div class=" quote_sec about relative z-1">
+                                                                        <img src="{% static 'assets/images/elements/element_17.png' %}" class="element_5 rotate_elem" alt="img">
+                        <div class=" section-title left-align wow fadeInDown">
+                                                                        <p class="subtitle">
+                                                                            <i class="fal fa-book"></i>
+                                                                            Admission Going On
+                                                                        </p>
+                                                                        <h3 class="title mb-0">Find Your Best Coach With
+                                                                            Wellco</h3>
+                                                                    </div>
+                                                                    <p>Sed ut perspiciatis unde omnis iste natus error
+                                                                        sit voluptatem accusantium doloremque laudtium
+                                                                        totam rem aperiam eaque quae</p>
+                                                                    <form class="wow fadeInUp">
+                                                                        <div class="row">
+                                                                            <div class="col-sm-6">
+                                                                                <div class="form-group">
+                                                                                    <input type="text" name="#"
+                                                                                           class="form-control form-control-custom"
+                                                                                           placeholder="Your Name"
+                                                                                           autocomplete="off">
+                                                                                    <i class="fal fa-user"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-6">
+                                                                                <div class="form-group">
+                                                                                    <input type="text" name="#"
+                                                                                           class="form-control form-control-custom"
+                                                                                           placeholder="Email Address"
+                                                                                           autocomplete="off">
+                                                                                    <i class="fal fa-envelope"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-12">
+                                                                                <button type="submit"
+                                                                                        class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle"
+                                                                                        id="btn-form8">Enroll Now <i
+                                                                                        class="fal fa-chevron-right ml-2"></i>
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                            </section>
+                                            Video Quote End -->
+                                            <!-- Features Start
+                                            <section class="section-padding">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <!-- Feature Box Start
+                                                        <div class="col-lg-3 col-md-6">
+                                                            <div class="features_box wow fadeInUp" data-wow-delay=".3s">
+                                                                <div class="icon">
+                                                                    <img src="assets/images/icons/icon_1.png" alt="img">
+                                                                </div>
+                                                                <h5>Exclusive Coach</h5>
+                                                                <p>Quis autem vel eum reprehenderit quin eavoluptate</p>
+                                                                <a href="#">
+                                                                    <span>Read More</span>
+                                                                    <i class="fal fa-chevron-right"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Feature Box End -->
+                                            <!-- Feature Box Start
+                                            <div class="col-lg-3 col-md-6">
+                                                <div class="features_box wow fadeInUp" data-wow-delay=".4s">
+                                                    <div class="icon">
+                                                        <img src="assets/images/icons/icon_2.png" alt="img">
+                                                    </div>
+                                                    <h5>Creative Minds</h5>
+                                                    <p>Quis autem vel eum reprehenderit quin eavoluptate</p>
+                                                    <a href="#">
+                                                        <span>Read More</span>
+                                                        <i class="fal fa-chevron-right"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <!-- Feature Box End -->
+                                            <!-- Feature Box Start
+                                            <div class="col-lg-3 col-md-6">
+                                                <div class="features_box wow fadeInUp" data-wow-delay=".5s">
+                                                    <div class="icon">
+                                                        <img src="assets/images/icons/icon_3.png" alt="img">
+                                                    </div>
+                                                    <h5>Video Tutorials</h5>
+                                                    <p>Quis autem vel eum reprehenderit quin eavoluptate</p>
+                                                    <a href="#">
+                                                        <span>Read More</span>
+                                                        <i class="fal fa-chevron-right"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <!-- Feature Box End -->
+                                            <!-- Feature Box Start
+                                            <div class="col-lg-3 col-md-6">
+                                                <div class="features_box wow fadeInUp" data-wow-delay=".6s">
+                                                    <div class="icon">
+                                                        <img src="assets/images/icons/icon_4.png" alt="img">
+                                                    </div>
+                                                    <h5>Worlds Record</h5>
+                                                    <p>Quis autem vel eum reprehenderit quin eavoluptate</p>
+                                                    <a href="#">
+                                                        <span>Read More</span>
+                                                        <i class="fal fa-chevron-right"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <!-- Feature Box End
+                                        </div>
+                                    </div>
+                                </section>
+                                <!-- Features End -->
+                                            <!-- About Start
+                                            <section class="section-padding pt-0 about">
+                                                <div class="container">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-xl-7 col-lg-6">
+                                                            <div class="image_box wow fadeInLeft">
+                                                                <img src="assets/images/about/image_1.jpg" alt="img" class="image-fit image_1 rounded-circle">
+                                                                <img src="assets/images/about/image_2.jpg" alt="img" class="image-fit image_2 rounded-circle">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-5 col-lg-6">
+                                                            <div class="section-title left-align wow fadeInUp">
+                                                                <p class="subtitle">
+                                                                    <i class="fal fa-book"></i>
+                                                                    What We Provide
+                                                                </p>
+                                                                <h3 class="title">We Care About Your Life For Better.</h3>
+                                                                <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatue velillum </p>
+                                                            </div>
+                                                            <ul class="about_list">
+                                                                <li class=" wow fadeInDown">
+                                                                    <div class="icon">
+                                                                        <img src="assets/images/icons/icon_5.png" alt="img" class="image-fit">
+                                                                    </div>
+                                                                    <div class="text">
+                                                                        <h6 class="mb-2">Master Certified Coach</h6>
+                                                                        <p class="mb-0">Quis autem vel eum iure reprehenderit quein ea voluptate velit esse quam</p>
+                                                                    </div>
+                                                                </li>
+                                                                <li class=" wow fadeInDown">
+                                                                    <div class="icon">
+                                                                        <img src="assets/images/icons/icon_5.png" alt="img" class="image-fit">
+                                                                    </div>
+                                                                    <div class="text">
+                                                                        <h6 class="mb-2">Coach Certification Program</h6>
+                                                                        <p class="mb-0">Quis autem vel eum iure reprehenderit quein ea voluptate velit esse quam</p>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                             About End -->
+
+
+                                            <!-- Cta Start
+                                            <div class="cta_box">
+                                                <div class="container relative z-1">
+                                                    <div class="bg-thm-color-two cta_box_inner z-1 mt-negative">
+                                                        <img src="assets/images/elements/shape.png" alt="shape" class="shape_1 zoom-fade">
+                                                        <div class="row justify-content-between align-items-center">
+                                                            <div class="col-lg-6">
+                                                                <div class="text_block wow fadeInLeft">
+                                                                    <div class="section-title left-align white">
+                                                                        <p class="subtitle">
+                                                                            <i class="fal fa-book"></i>
+                                                                            Our Professionals
+                                                                        </p>
+                                                                        <h3 class="title">Do You Want to Transform Your Life For Better ?</h3>
+                                                                        <a href="#" class="thm-btn bg-thm-color-three thm-color-three-shadow btn-rounded">Contact Us <i class="fal fa-chevron-right ml-2"></i></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-5">
+                                                                <div class="image_box relative z-1 wow fadeInRight">
+                                                                    <img src="assets/images/elements/square_shape.png" alt="shape" class="shape_2 rotate_elem">
+                                                                    <img src="assets/images/cta_image.png" alt="img" class="image-fit">
+                                                                    <div class="arrows slideRight">
+                                                                        <div class="arrow"></div>
+                                                                        <div class="arrow"></div>
+                                                                        <div class="arrow"></div>
+                                                                        <div class="arrow"></div>
+                                                                        <div class="arrow"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="arrows to_up slideTop">
+                                                        <div class="arrow"></div>
+                                                        <div class="arrow"></div>
+                                                        <div class="arrow"></div>
+                                                        <div class="arrow"></div>
+                                                        <div class="arrow"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             Cta End -->
+
+                                            <!-- Testimonials Start
+                                            <section class="section-padding pt-0 relative z-1">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <div class="section-title left-align wow fadeInLeft">
+                                                                <p class="subtitle mb-4">
+                                                                    <i class="fal fa-book"></i>
+                                                                    Our Testimonials
+                                                                </p>
+                                                                <h3 class="title mb-0">What’s Our Clients<br> About Us</h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="testimonial_slider row arrows_none">
+                                                        <!-- Testimonial Item
+                                                        <div class="slide-item col-12">
+                                                            <div class="testimonial_item wow fadeInUp" data-wow-delay=".2s">
+                                                                <div class="author">
+                                                                    <div class="image bg-thm-color-two">
+                                                                        <img src="assets/images/author/1.jpg" alt="img" class="image-fit">
+                                                                    </div>
+                                                                    <div class="text">
+                                                                        <h6 class="mb-0">Herminia F. Hudson</h6>
+                                                                        <p class="mb-0 font-weight-bold thm-color-two">Web Designer</p>
+                                                                    </div>
+                                                                </div>
+                                                                <p class="comment">
+                                                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudtium totam rem aperiam eaque quae
+                                                                </p>
+                                                                <div class="ratings">
+                                                                    <i class="fal fa-star active"></i>
+                                                                    <i class="fal fa-star active"></i>
+                                                                    <i class="fal fa-star active"></i>
+                                                                    <i class="fal fa-star active"></i>
+                                                                    <i class="fal fa-star"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Testimonial Item -->
+                                            <!-- Testimonial Item
+                                            <div class="slide-item col-12">
+                                                <div class="testimonial_item wow fadeInUp" data-wow-delay=".3s">
+                                                    <div class="author">
+                                                        <div class="image bg-thm-color-two">
+                                                            <img src="assets/images/author/2.jpg" alt="img" class="image-fit">
+                                                        </div>
+                                                        <div class="text">
+                                                            <h6 class="mb-0">Robert M. Morales</h6>
+                                                            <p class="mb-0 font-weight-bold thm-color-two">Business Manager</p>
+                                                        </div>
+                                                    </div>
+                                                    <p class="comment">
+                                                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudtium totam rem aperiam eaque quae
+                                                    </p>
+                                                    <div class="ratings">
+                                                        <i class="fal fa-star active"></i>
+                                                        <i class="fal fa-star active"></i>
+                                                        <i class="fal fa-star active"></i>
+                                                        <i class="fal fa-star"></i>
+                                                        <i class="fal fa-star"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Testimonial Item -->
+                                            <!-- Testimonial Item
+                                            <div class="slide-item col-12">
+                                                <div class="testimonial_item wow fadeInUp" data-wow-delay=".39s">
+                                                    <div class="author">
+                                                        <div class="image bg-thm-color-two">
+                                                            <img src="assets/images/author/3.jpg" alt="img" class="image-fit">
+                                                        </div>
+                                                        <div class="text">
+                                                            <h6 class="mb-0">Nicolas Vanderpool</h6>
+                                                            <p class="mb-0 font-weight-bold thm-color-two">Apps Developer</p>
+                                                        </div>
+                                                    </div>
+                                                    <p class="comment">
+                                                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudtium totam rem aperiam eaque quae
+                                                    </p>
+                                                    <div class="ratings">
+                                                        <i class="fal fa-star active"></i>
+                                                        <i class="fal fa-star active"></i>
+                                                        <i class="fal fa-star active"></i>
+                                                        <i class="fal fa-star active"></i>
+                                                        <i class="fal fa-star active"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Testimonial Item -->
+                                            <!-- Testimonial Item
+                                            <div class="slide-item col-12">
+                                                <div class="testimonial_item wow fadeInUp" data-wow-delay=".5s">
+                                                    <div class="author">
+                                                        <div class="image bg-thm-color-two">
+                                                            <img src="assets/images/author/1.jpg" alt="img" class="image-fit">
+                                                        </div>
+                                                        <div class="text">
+                                                            <h6 class="mb-0">Herminia F. Hudson</h6>
+                                                            <p class="mb-0 font-weight-bold thm-color-two">Web Designer</p>
+                                                        </div>
+                                                    </div>
+                                                    <p class="comment">
+                                                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudtium totam rem aperiam eaque quae
+                                                    </p>
+                                                    <div class="ratings">
+                                                        <i class="fal fa-star active"></i>
+                                                        <i class="fal fa-star active"></i>
+                                                        <i class="fal fa-star active"></i>
+                                                        <i class="fal fa-star active"></i>
+                                                        <i class="fal fa-star"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Testimonial Item -->
+                                            <!-- Testimonial Item
+                                            <div class="slide-item col-12">
+                                                <div class="testimonial_item wow fadeInUp" data-wow-delay=".59s">
+                                                    <div class="author">
+                                                        <div class="image bg-thm-color-two">
+                                                            <img src="assets/images/author/2.jpg" alt="img" class="image-fit">
+                                                        </div>
+                                                        <div class="text">
+                                                            <h6 class="mb-0">Robert M. Morales</h6>
+                                                            <p class="mb-0 font-weight-bold thm-color-two">Business Manager</p>
+                                                        </div>
+                                                    </div>
+                                                    <p class="comment">
+                                                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudtium totam rem aperiam eaque quae
+                                                    </p>
+                                                    <div class="ratings">
+                                                        <i class="fal fa-star active"></i>
+                                                        <i class="fal fa-star active"></i>
+                                                        <i class="fal fa-star active"></i>
+                                                        <i class="fal fa-star"></i>
+                                                        <i class="fal fa-star"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Testimonial Item -->
+                                            <!-- Testimonial Item
+                                            <div class="slide-item col-12 wow fadeInUp" data-wow-delay=".7s">
+                                                <div class="testimonial_item">
+                                                    <div class="author">
+                                                        <div class="image bg-thm-color-two">
+                                                            <img src="assets/images/author/3.jpg" alt="img" class="image-fit">
+                                                        </div>
+                                                        <div class="text">
+                                                            <h6 class="mb-0">Nicolas Vanderpool</h6>
+                                                            <p class="mb-0 font-weight-bold thm-color-two">Apps Developer</p>
+                                                        </div>
+                                                    </div>
+                                                    <p class="comment">
+                                                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudtium totam rem aperiam eaque quae
+                                                    </p>
+                                                    <div class="ratings">
+                                                        <i class="fal fa-star active"></i>
+                                                        <i class="fal fa-star active"></i>
+                                                        <i class="fal fa-star active"></i>
+                                                        <i class="fal fa-star active"></i>
+                                                        <i class="fal fa-star active"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Testimonial Item
+                                        </div>
+                                    </div>
+                                    <div class="circle_wave"></div>
+                                </section>
+                                <!-- Testimonials End -->
+
+
+                                            <!-- Faqs Start
+                                          <div class="section-padding faqs_elements">
+                                              <div class="container relative z-1">
+                                                  <div class="row justify-content-center">
+                                                      <div class="col-xl-9 col-lg-11">
+                                                          <ul class="nav nav-tabs style_3 wow fadeInUp">
+                                                              <li class="nav-item">
+                                                                  <a href="#general" class="nav-link active" data-toggle="tab">General</a>
+                                                              </li>
+                                                              <li class="nav-item">
+                                                                  <a href="#allcoach" class="nav-link" data-toggle="tab">All Coach</a>
+                                                              </li>
+                                                              <li class="nav-item">
+                                                                  <a href="#advisors" class="nav-link" data-toggle="tab">Advisors</a>
+                                                              </li>
+                                                              <li class="nav-item">
+                                                                  <a href="#tutorials" class="nav-link" data-toggle="tab">Tutorials</a>
+                                                              </li>
+                                                          </ul>
+                                                          <div class="tab-content wow fadeInDown">
+                                                              <div class="tab-pane fade active show" id="general">
+                                                                  <div class="accordion accordion-style style_2 mb-xl-30" id="generalaccordion">
+                                                                      <div class="card">
+                                                                          <div class="card-header">
+                                                                              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#GeneralItemOne" aria-expanded="true" aria-controls="GeneralItemOne">
+                                                                                  We Teach You How To Coach Yourself.
+                                                                              </button>
+                                                                          </div>
+                                                                          <div id="GeneralItemOne" class="collapse show" aria-labelledby="GeneralItemOne" data-parent="#generalaccordion">
+                                                                              <div class="card-body">
+                                                                                  Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                      <div class="card">
+                                                                          <div class="card-header">
+                                                                              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#GeneralItemTwo" aria-expanded="false" aria-controls="GeneralItemTwo">
+                                                                                  We Teach You How To Feel Better.
+                                                                              </button>
+                                                                          </div>
+                                                                          <div id="GeneralItemTwo" class="collapse" aria-labelledby="GeneralItemTwo" data-parent="#generalaccordion">
+                                                                              <div class="card-body">
+                                                                                  Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                      <div class="card">
+                                                                          <div class="card-header">
+                                                                              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#GeneralItemThree" aria-expanded="false" aria-controls="GeneralItemThree">
+                                                                                  We Teach You How To Take Massive Action.
+                                                                              </button>
+                                                                          </div>
+                                                                          <div id="GeneralItemThree" class="collapse" aria-labelledby="GeneralItemThree" data-parent="#generalaccordion">
+                                                                              <div class="card-body">
+                                                                                  Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                      <div class="card">
+                                                                          <div class="card-header">
+                                                                              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#GeneralItemFour" aria-expanded="false" aria-controls="GeneralItemFour">
+                                                                                  Be Less Frustrated By Learning Relationship Tools
+                                                                              </button>
+                                                                          </div>
+                                                                          <div id="GeneralItemFour" class="collapse" aria-labelledby="GeneralItemFour" data-parent="#generalaccordion">
+                                                                              <div class="card-body">
+                                                                                  Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                      <div class="card">
+                                                                          <div class="card-header">
+                                                                              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#GeneralItemFive" aria-expanded="false" aria-controls="GeneralItemFive">
+                                                                                  Motivate Yourself To Get More Done In Less Time
+                                                                              </button>
+                                                                          </div>
+                                                                          <div id="GeneralItemFive" class="collapse" aria-labelledby="GeneralItemFive" data-parent="#generalaccordion">
+                                                                              <div class="card-body">
+                                                                                  Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                      <div class="card">
+                                                                          <div class="card-header">
+                                                                              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#GeneralItemSix" aria-expanded="false" aria-controls="GeneralItemSix">
+                                                                                  Ease Anxiety, Stress, Worry, And Boredom
+                                                                              </button>
+                                                                          </div>
+                                                                          <div id="GeneralItemSix" class="collapse" aria-labelledby="GeneralItemSix" data-parent="#generalaccordion">
+                                                                              <div class="card-body">
+                                                                                  Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                      <div class="card">
+                                                                          <div class="card-header">
+                                                                              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#GeneralItemSeven" aria-expanded="false" aria-controls="GeneralItemSeven">
+                                                                                  Process Emotion And Create More Energy
+                                                                              </button>
+                                                                          </div>
+                                                                          <div id="GeneralItemSeven" class="collapse" aria-labelledby="GeneralItemSeven" data-parent="#generalaccordion">
+                                                                              <div class="card-body">
+                                                                                  Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+                                                              <div class="tab-pane fade" id="allcoach">
+                                                                  <div class="accordion accordion-style style_2 mb-xl-30" id="allcoachaccordion">
+                                                                      <div class="card">
+                                                                          <div class="card-header">
+                                                                              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#AllCoachItemOne" aria-expanded="true" aria-controls="AllCoachItemOne">
+                                                                                  We Teach You How To Coach Yourself.
+                                                                              </button>
+                                                                          </div>
+                                                                          <div id="AllCoachItemOne" class="collapse show" aria-labelledby="AllCoachItemOne" data-parent="#allcoachaccordion">
+                                                                              <div class="card-body">
+                                                                                  Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                      <div class="card">
+                                                                          <div class="card-header">
+                                                                              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#AllCoachItemTwo" aria-expanded="false" aria-controls="AllCoachItemTwo">
+                                                                                  We Teach You How To Feel Better.
+                                                                              </button>
+                                                                          </div>
+                                                                          <div id="AllCoachItemTwo" class="collapse" aria-labelledby="AllCoachItemTwo" data-parent="#allcoachaccordion">
+                                                                              <div class="card-body">
+                                                                                  Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                      <div class="card">
+                                                                          <div class="card-header">
+                                                                              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#AllCoachItemThree" aria-expanded="false" aria-controls="AllCoachItemThree">
+                                                                                  We Teach You How To Take Massive Action.
+                                                                              </button>
+                                                                          </div>
+                                                                          <div id="AllCoachItemThree" class="collapse" aria-labelledby="AllCoachItemThree" data-parent="#allcoachaccordion">
+                                                                              <div class="card-body">
+                                                                                  Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                      <div class="card">
+                                                                          <div class="card-header">
+                                                                              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#AllCoachItemFour" aria-expanded="false" aria-controls="AllCoachItemFour">
+                                                                                  Be Less Frustrated By Learning Relationship Tools
+                                                                              </button>
+                                                                          </div>
+                                                                          <div id="AllCoachItemFour" class="collapse" aria-labelledby="AllCoachItemFour" data-parent="#allcoachaccordion">
+                                                                              <div class="card-body">
+                                                                                  Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                      <div class="card">
+                                                                          <div class="card-header">
+                                                                              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#AllCoachItemFive" aria-expanded="false" aria-controls="AllCoachItemFive">
+                                                                                  Motivate Yourself To Get More Done In Less Time
+                                                                              </button>
+                                                                          </div>
+                                                                          <div id="AllCoachItemFive" class="collapse" aria-labelledby="AllCoachItemFive" data-parent="#allcoachaccordion">
+                                                                              <div class="card-body">
+                                                                                  Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                      <div class="card">
+                                                                          <div class="card-header">
+                                                                              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#AllCoachItemSix" aria-expanded="false" aria-controls="AllCoachItemSix">
+                                                                                  Ease Anxiety, Stress, Worry, And Boredom
+                                                                              </button>
+                                                                          </div>
+                                                                          <div id="AllCoachItemSix" class="collapse" aria-labelledby="AllCoachItemSix" data-parent="#allcoachaccordion">
+                                                                              <div class="card-body">
+                                                                                  Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                      <div class="card">
+                                                                          <div class="card-header">
+                                                                              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#AllCoachItemSeven" aria-expanded="false" aria-controls="AllCoachItemSeven">
+                                                                                  Process Emotion And Create More Energy
+                                                                              </button>
+                                                                          </div>
+                                                                          <div id="AllCoachItemSeven" class="collapse" aria-labelledby="AllCoachItemSeven" data-parent="#allcoachaccordion">
+                                                                              <div class="card-body">
+                                                                                  Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+                                                              <div class="tab-pane fade" id="advisors">
+                                                                  <div class="accordion accordion-style style_2 mb-xl-30" id="advisorsaccordion">
+                                                                      <div class="card">
+                                                                          <div class="card-header">
+                                                                              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#AdvisorsItemOne" aria-expanded="true" aria-controls="AdvisorsItemOne">
+                                                                                  We Teach You How To Coach Yourself.
+                                                                              </button>
+                                                                          </div>
+                                                                          <div id="AdvisorsItemOne" class="collapse show" aria-labelledby="AdvisorsItemOne" data-parent="#advisorsaccordion">
+                                                                              <div class="card-body">
+                                                                                  Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                      <div class="card">
+                                                                          <div class="card-header">
+                                                                              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#AdvisorsItemTwo" aria-expanded="false" aria-controls="AdvisorsItemTwo">
+                                                                                  We Teach You How To Feel Better.
+                                                                              </button>
+                                                                          </div>
+                                                                          <div id="AdvisorsItemTwo" class="collapse" aria-labelledby="AdvisorsItemTwo" data-parent="#advisorsaccordion">
+                                                                              <div class="card-body">
+                                                                                  Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                      <div class="card">
+                                                                          <div class="card-header">
+                                                                              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#AdvisorsItemThree" aria-expanded="false" aria-controls="AdvisorsItemThree">
+                                                                                  We Teach You How To Take Massive Action.
+                                                                              </button>
+                                                                          </div>
+                                                                          <div id="AdvisorsItemThree" class="collapse" aria-labelledby="AdvisorsItemThree" data-parent="#advisorsaccordion">
+                                                                              <div class="card-body">
+                                                                                  Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                      <div class="card">
+                                                                          <div class="card-header">
+                                                                              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#AdvisorsItemFour" aria-expanded="false" aria-controls="AdvisorsItemFour">
+                                                                                  Be Less Frustrated By Learning Relationship Tools
+                                                                              </button>
+                                                                          </div>
+                                                                          <div id="AdvisorsItemFour" class="collapse" aria-labelledby="AdvisorsItemFour" data-parent="#advisorsaccordion">
+                                                                              <div class="card-body">
+                                                                                  Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                      <div class="card">
+                                                                          <div class="card-header">
+                                                                              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#AdvisorsItemFive" aria-expanded="false" aria-controls="AdvisorsItemFive">
+                                                                                  Motivate Yourself To Get More Done In Less Time
+                                                                              </button>
+                                                                          </div>
+                                                                          <div id="AdvisorsItemFive" class="collapse" aria-labelledby="AdvisorsItemFive" data-parent="#advisorsaccordion">
+                                                                              <div class="card-body">
+                                                                                  Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                      <div class="card">
+                                                                          <div class="card-header">
+                                                                              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#AdvisorsItemSix" aria-expanded="false" aria-controls="AdvisorsItemSix">
+                                                                                  Ease Anxiety, Stress, Worry, And Boredom
+                                                                              </button>
+                                                                          </div>
+                                                                          <div id="AdvisorsItemSix" class="collapse" aria-labelledby="AdvisorsItemSix" data-parent="#advisorsaccordion">
+                                                                              <div class="card-body">
+                                                                                  Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                      <div class="card">
+                                                                          <div class="card-header">
+                                                                              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#AdvisorsItemSeven" aria-expanded="false" aria-controls="AdvisorsItemSeven">
+                                                                                  Process Emotion And Create More Energy
+                                                                              </button>
+                                                                          </div>
+                                                                          <div id="AdvisorsItemSeven" class="collapse" aria-labelledby="AdvisorsItemSeven" data-parent="#advisorsaccordion">
+                                                                              <div class="card-body">
+                                                                                  Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+                                                              <div class="tab-pane fade" id="tutorials">
+                                                                  <div class="accordion accordion-style style_2 mb-xl-30" id="tutorialsaccordion">
+                                                                      <div class="card">
+                                                                          <div class="card-header">
+                                                                              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#TutorialsItemOne" aria-expanded="true" aria-controls="TutorialsItemOne">
+                                                                                  We Teach You How To Coach Yourself.
+                                                                              </button>
+                                                                          </div>
+                                                                          <div id="TutorialsItemOne" class="collapse show" aria-labelledby="TutorialsItemOne" data-parent="#tutorialsaccordion">
+                                                                              <div class="card-body">
+                                                                                  Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                      <div class="card">
+                                                                          <div class="card-header">
+                                                                              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#TutorialsItemTwo" aria-expanded="false" aria-controls="TutorialsItemTwo">
+                                                                                  We Teach You How To Feel Better.
+                                                                              </button>
+                                                                          </div>
+                                                                          <div id="TutorialsItemTwo" class="collapse" aria-labelledby="TutorialsItemTwo" data-parent="#tutorialsaccordion">
+                                                                              <div class="card-body">
+                                                                                  Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                      <div class="card">
+                                                                          <div class="card-header">
+                                                                              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#TutorialsItemThree" aria-expanded="false" aria-controls="TutorialsItemThree">
+                                                                                  We Teach You How To Take Massive Action.
+                                                                              </button>
+                                                                          </div>
+                                                                          <div id="TutorialsItemThree" class="collapse" aria-labelledby="TutorialsItemThree" data-parent="#tutorialsaccordion">
+                                                                              <div class="card-body">
+                                                                                  Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                      <div class="card">
+                                                                          <div class="card-header">
+                                                                              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#TutorialsItemFour" aria-expanded="false" aria-controls="TutorialsItemFour">
+                                                                                  Be Less Frustrated By Learning Relationship Tools
+                                                                              </button>
+                                                                          </div>
+                                                                          <div id="TutorialsItemFour" class="collapse" aria-labelledby="TutorialsItemFour" data-parent="#tutorialsaccordion">
+                                                                              <div class="card-body">
+                                                                                  Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                      <div class="card">
+                                                                          <div class="card-header">
+                                                                              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#TutorialsItemFive" aria-expanded="false" aria-controls="TutorialsItemFive">
+                                                                                  Motivate Yourself To Get More Done In Less Time
+                                                                              </button>
+                                                                          </div>
+                                                                          <div id="TutorialsItemFive" class="collapse" aria-labelledby="TutorialsItemFive" data-parent="#tutorialsaccordion">
+                                                                              <div class="card-body">
+                                                                                  Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                      <div class="card">
+                                                                          <div class="card-header">
+                                                                              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#TutorialsItemSix" aria-expanded="false" aria-controls="TutorialsItemSix">
+                                                                                  Ease Anxiety, Stress, Worry, And Boredom
+                                                                              </button>
+                                                                          </div>
+                                                                          <div id="TutorialsItemSix" class="collapse" aria-labelledby="TutorialsItemSix" data-parent="#tutorialsaccordion">
+                                                                              <div class="card-body">
+                                                                                  Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                      <div class="card">
+                                                                          <div class="card-header">
+                                                                              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#TutorialsItemSeven" aria-expanded="false" aria-controls="TutorialsItemSeven">
+                                                                                  Process Emotion And Create More Energy
+                                                                              </button>
+                                                                          </div>
+                                                                          <div id="TutorialsItemSeven" class="collapse" aria-labelledby="TutorialsItemSeven" data-parent="#tutorialsaccordion">
+                                                                              <div class="card-body">
+                                                                                  Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam tatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur
+                                                                              </div>
+                                                                          </div>
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                  <img src="assets/images/elements/element_10.png" alt="element" class="element_1 zoom-fade">
+                                                  <img src="assets/images/elements/element_35.png" alt="element" class="element_2 zoom-fade">
+                                                  <img src="assets/images/elements/element_36.png" alt="element" class="element_3 rotate_elem">
+                                                  <img src="assets/images/elements/element_37.png" alt="element" class="element_4 rotate_elem">
+                                                  <img src="assets/images/elements/element_38.png" alt="element" class="element_5 rotate_elem">
+                                              </div>
+                                          </div>
+                                          Faqs End -->
+                                            <!-- Video Start -->
+                                            <div class="section pt-100 video_box_elements">
+                                                <div class="container relative z-1">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="video_warp style_2 relative z-1 wow fadeInUp">
+                                                                <img src="{% static 'assets/images/Video.jpg' %}" alt="img" class="image-fit">
+                        <a href=" https://www.youtube.com/watch?v=TKnufs85hXk" class="popup-youtube video_btn
+                                                                transform-center justify-content-center d-flex style_2
+                                                                big">
+                                                                <i class="fas fa-play video_icon bg-thm-color-three pulse-animated"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <img src="{% static 'assets/images/elements/element_25.png' %}" alt="element" class="element_1 rotate_elem">
+            <img src="{% static 'assets/images/elements/element_26.png' %}" alt="element" class="element_2 rotate_elem">
+                                                    <img src="{% static 'assets/images/elements/element_27.png' %}" alt="element" class="element_3 rotate_elem">
+            <div class=" arrows to_up one slideTop">
+                                                    <div class="arrow"></div>
+                                                    <div class="arrow"></div>
+                                                    <div class="arrow"></div>
+                                                    <div class="arrow"></div>
+                                                    <div class="arrow"></div>
+                                                </div>
+                                                <div class="arrows to_up two slideTop">
+                                                    <div class="arrow"></div>
+                                                    <div class="arrow"></div>
+                                                    <div class="arrow"></div>
+                                                    <div class="arrow"></div>
+                                                    <div class="arrow"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Video End -->
+
+                                        <!-- Video Start -->
+                                        <section class="section-padding isotope-filter-items" style="padding-top:0;">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="section-title wow fadeInDown">
+                                                            <p class="subtitle">
+                                                                <i class="fal fa-book"></i>
+                                                                Vijayaveedhi Video Gallery
+                                                            </p>
+                                                            <h3 class="title">KERALA PSC</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-12">
+                                                        <div class="filter-btns mb-5">
+                                                            <ul>
+                                                                <li class="active filter-trigger" data-filter="*">
+                                                                    <a href="#">All</a>
+                                                                </li>
+                                                                <li class="filter-trigger" data-filter=".lifestyle">
+                                                                    <a href="#">SSLC</a>
+                                                                </li>
+                                                                <li class="filter-trigger" data-filter=".goals">
+                                                                    <a href="#">Plus Two</a>
+                                                                </li>
+                                                                <li class="filter-trigger" data-filter=".fashion">
+                                                                    <a href="#">Degree</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row filteritems">
+                                                    <!-- Box Start -->
+                                                    <div class="col-lg-4 col-md-6 masonry-item lifestyle">
+                                                        <div class="video_box wow fadeInDown" data-wow-delay=".1s">
+                                                            <img src="{% static 'assets/images/video/history.jpeg' %}" alt="img" class="image-fit">
+                            <div class=" video_badges">
+                                                            <span class="tag_badge bg-thm-color-four">₹2199</span>
+                                                        </div>
+                                                        <a href="https://www.youtube.com/watch?v=TKnufs85hXk"
+                                                           class="popup-youtube video_btn">
+                                                            <i class="fas fa-play"></i>
+                                                        </a>
+                                                        <div class="video_text">
+                                                            <h6 class="text-white mb-0">India/Kerala History</h6>
+                                                            <p class="mb-0 thm-color-light">Preliminary</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Box End -->
+                                                <!-- Box Start -->
+                                                <div class="col-lg-4 col-md-6 masonry-item lifestyle">
+                                                    <div class="video_box wow fadeInDown" data-wow-delay=".1s">
+                                                        <img src="{% static 'assets/images/video/physics.jpeg' %}" alt="img" class="image-fit">
+                            <div class=" video_badges">
+                                                        <span class="tag_badge bg-thm-color-four">₹1599</span>
+                                                    </div>
+                                                    <a href="https://www.youtube.com/watch?v=TKnufs85hXk"
+                                                       class="popup-youtube video_btn">
+                                                        <i class="fas fa-play"></i>
+                                                    </a>
+                                                    <div class="video_text">
+                                                        <h6 class="text-white mb-0">Physical Science</h6>
+                                                        <p class="mb-0 thm-color-light">Main</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Box End -->
+                                            <!-- Box Start -->
+                                            <div class="col-lg-4 col-md-6 masonry-item  lifestyle">
+                                                <div class="video_box wow fadeInUp" data-wow-delay=".2s">
+                                                    <img src="{% static 'assets/images/video/biology.jpeg' %}" alt="img" class="image-fit">
+                            <div class=" video_badges">
+                                                    <span class="tag_badge bg-thm-color-four">₹1999</span>
+                                                </div>
+                                                <a href="https://www.youtube.com/watch?v=TKnufs85hXk"
+                                                   class="popup-youtube video_btn">
+                                                    <i class="fas fa-play"></i>
+                                                </a>
+                                                <div class="video_text">
+                                                    <h6 class="text-white mb-0">Biology</h6>
+                                                    <p class="mb-0 thm-color-light">Main</p>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <!-- Box End -->
+                                    <!-- Box Start -->
+                                    <div class="col-lg-4 col-md-6 masonry-item  goals">
+                                        <div class="video_box wow fadeInDown" data-wow-delay=".3s">
+                                            <img src="{% static 'assets/images/video/economics.jpeg' %}" alt="img" class="image-fit">
+                            <div class=" video_badges">
+                                            <span class="tag_badge bg-thm-color-four">₹1999</span>
+                                        </div>
+                                        <a href="https://www.youtube.com/watch?v=TKnufs85hXk"
+                                           class="popup-youtube video_btn">
+                                            <i class="fas fa-play"></i>
+                                        </a>
+                                        <div class="video_text">
+                                            <h6 class="text-white mb-0">Economics and Civics</h6>
+                                            <p class="mb-0 thm-color-light">Preliminary</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Box End -->
+                                <!-- Box Start -->
+                                <div class="col-lg-4 col-md-6 masonry-item  goals">
+                                    <div class="video_box wow fadeInDown" data-wow-delay=".3s">
+                                        <img src="{% static 'assets/images/video/computer science.jpeg' %}" alt="img" class="image-fit">
+                            <div class=" video_badges">
+                                        <span class="tag_badge bg-thm-color-four">₹2599</span>
+                                    </div>
+                                    <a href="https://www.youtube.com/watch?v=TKnufs85hXk"
+                                       class="popup-youtube video_btn">
+                                        <i class="fas fa-play"></i>
+                                    </a>
+                                    <div class="video_text">
+                                        <h6 class="text-white mb-0">Computer Science</h6>
+                                        <p class="mb-0 thm-color-light">Main</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Box End -->
+                            <!-- Box Start -->
+                            <div class="col-lg-4 col-md-6 masonry-item  goals">
+                                <div class="video_box wow fadeInDown" data-wow-delay=".3s">
+                                    <img src="{% static 'assets/images/video/arithametic.jpeg' %}" alt="img" class="image-fit">
+                            <div class=" video_badges">
+                                    <span class="tag_badge bg-thm-color-four">₹2399</span>
+                                </div>
+                                <a href="https://www.youtube.com/watch?v=TKnufs85hXk" class="popup-youtube video_btn">
+                                    <i class="fas fa-play"></i>
+                                </a>
+                                <div class="video_text">
+                                    <h6 class="text-white mb-0">Simple Arithmetic</h6>
+                                    <p class="mb-0 thm-color-light">Preliminary</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Box End -->
+                    </div>
+                    <div class="row filteritems">
+
+
+                        <!-- Box Start -->
+                        <div class="col-lg-4 col-md-6 masonry-item fashion">
+                            <div class="video_box wow fadeInDown" data-wow-delay=".1s">
+                                <img src="{% static 'assets/images/video/english.jpeg' %}" alt="img" class="image-fit">
+                            <div class=" video_badges">
+                                <span class="tag_badge bg-thm-color-four">₹1999</span>
+                            </div>
+                            <a href="https://www.youtube.com/watch?v=TKnufs85hXk" class="popup-youtube video_btn">
+                                <i class="fas fa-play"></i>
+                            </a>
+                            <div class="video_text">
+                                <h6 class="text-white mb-0">English/Malayalam</h6>
+                                <p class="mb-0 thm-color-light">Preliminary</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Box End -->
+                    <!-- Box Start -->
+                    <div class="col-lg-4 col-md-6 masonry-item fashion">
+                        <div class="video_box wow fadeInDown" data-wow-delay=".1s">
+                            <img src="{% static 'assets/images/video/sports.jpeg' %}" alt="img" class="image-fit">
+                            <div class=" video_badges">
+                            <span class="tag_badge bg-thm-color-four">₹2399</span>
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=TKnufs85hXk" class="popup-youtube video_btn">
+                            <i class="fas fa-play"></i>
+                        </a>
+                        <div class="video_text">
+                            <h6 class="text-white mb-0">Arts, Sports & Literature</h6>
+                            <p class="mb-0 thm-color-light">Preliminary</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Box End -->
+                <!-- Box Start -->
+                <div class="col-lg-4 col-md-6 masonry-item fashion">
+                    <div class="video_box wow fadeInDown" data-wow-delay=".1s">
+                        <img src="{% static 'assets/images/video/geography.jpeg' %}" alt="img" class="image-fit">
+                            <div class=" video_badges">
+                        <span class="tag_badge bg-thm-color-four">₹1399</span>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=TKnufs85hXk" class="popup-youtube video_btn">
+                        <i class="fas fa-play"></i>
+                    </a>
+                    <div class="video_text">
+                        <h6 class="text-white mb-0">India/Kerala Geography</h6>
+                        <p class="mb-0 thm-color-light">Main</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Box End -->
+        </div>
+    </div>
+    </section>
+    <!-- Video End -->
+
+    <!-- Quote Form Start -->
+    <section class="section-padding pb-0 section-bg quote_form_sec elements relative z-1"
+             style="background-image: url({% static 'assets/images/bg/bg_7.jpg' %});">
+                     <div class=" container relative z-1
+    ">
+    <div class="row flex-lg-row-reverse align-items-end justify-content-between">
+        <div class="col-xl-5 col-lg-6 mb-md-80 wow fadeInRight" data-wow-delay=".30ms">
+            <img src="{% static 'assets/images/Question_new-1 (4).png' %}" style="width:800px;" alt="img" class="image-fit-contain">
+                </div>
+                <div class=" col-lg-6">
+            <div class="quote_box">
+                <div class="section-title left-align white wow fadeInDown">
+                    <p class="subtitle mb-4">
+                        <i class="fal fa-book"></i>
+                        Get In Touch
+                    </p>
+                    <h3 class="title">Do You Have Any Questions</h3>
+                </div>
+                <form class="wow fadeInUp">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="text" name="#" class="form-control form-control-custom style_2"
+                                       placeholder="Your Name" autocomplete="off"/>
+                                <i class="fal fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="email" name="#" class="form-control form-control-custom style_2"
+                                       placeholder="Email Address" autocomplete="off"/>
+                                <i class="fal fa-envelope"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="text" name="#" class="form-control form-control-custom style_2"
+                                       placeholder="Phone Number" autocomplete="off"/>
+                                <i class="fal fa-phone"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <select class="form-control form-control-custom style_2" name="#">
+                                    <option selected>Subject</option>
+                                    <option value="option 1" style="color: #114f6f;">SSLC Level Preliminary Exam
+                                        Coaching
+                                    </option>
+                                    <option value="option 2" style="color: #114f6f;">SSLC Level Main Exam Coaching
+                                    </option>
+                                    <option value="option 1" style="color: #114f6f;">Plus Two Level Preliminary Exam
+                                        Coaching
+                                    </option>
+                                    <option value="option 2" style="color: #114f6f;">Plus Two Level Main Exam Coaching
+                                    </option>
+                                    <option value="option 1" style="color: #114f6f;">Degree Level Preliminary Exam
+                                        Coaching
+                                    </option>
+                                    <option value="option 2" style="color: #114f6f;">Degree Level Main Exam Coaching
+                                    </option>
+                                </select>
+                                <i class="fal fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <textarea class="form-control form-control-custom style_2" placeholder="Write Message"
+                                          rows="5"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <button type="submit"
+                                    class="thm-btn bg-thm-color-three thm-color-three-shadow btn-rectangle">Send Message
+                                <i class="fal fa-chevron-right ml-2"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <img src="{% static 'assets/images/elements/element_39.png' %}" alt="element" class="element_1 rotate_elem">
+    <img src="{% static 'assets/images/elements/element_40.png' %}" alt="element" class="element_2 zoom-fade">
+    <img src="{% static 'assets/images/elements/element_41.png' %}" alt="element" class="element_3 rotate_elem">
+    <img src="{% static 'assets/images/elements/element_42.png' %}" alt="element" class="element_4 rotate_elem">
+</div>
+</section>
+<!-- Quote Form End -->
+<!-- Newsletter Start
+<section class="section bg-thm-color-two-gradient z-1 newsletter_form_sec">
+    <img src="assets/images/elements/element_1.png" class="element_1" alt="Element">
+    <img src="assets/images/elements/element_2.png" class="element_2" alt="Element">
+    <div class="container relative z-1">
+        <div class="arrows to_right slideRight">
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+        </div>
+        <div class="arrows to_up slideTop">
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-xl-7 col-lg-8">
+                <div class="section-title mx-width-100 wow fadeInUp">
+                    <p class="subtitle">
+                        <i class="fal fa-book"></i>
+                        Our Newsletters
+                    </p>
+                    <h3 class="title">Get More Every Single Update To Join Our Newsletters</h3>
+                </div>
+            </div>
+            <div class="col-xl-8">
+                <div class="newsletter_form wow fadeInDown" data-wow-delay=".3s">
+                    <form>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter Your Email" autocomplete="off" name="#">
+                            <div class="input-group-append ml-0">
+                                <button type="submit" class="thm-btn bg-thm-color-three btn-rounded">
+                                    Subscribe Now
+                                    <i class="fal fa-chevron-right ml-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="condition" name="condition" checked>
+                            <label class="custom-control-label" for="condition">Get Update Monthly Subscription</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+Newsletter End -->
+<!-- Blog Start -->
+<section class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title wow fadeInUp">
+                    <p class="subtitle">
+                        <i class="fal fa-book"></i>
+                        NOTIFICATION
+                    </p>
+                    <h3 class="title">News articles and tips</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- post -->
+            <div class="col-xl-4 col-md-6">
+                <article class="post style_2 wow fadeInDown" data-wow-delay=".20ms">
+                    <div class="post_img">
+                        <img src="{% static 'assets/images/blog/businessman-survey-results-analysis-discovery-pollconcept-online-test-assess-survey-evaluate-computer-digital-assessment-analysis-business.jpg' %}"
+                             alt="img" class="image-fit">
+                    </div>
+                    <div class="post_caption">
+                        <ul class="post_meta">
+                            <li>
+                                <i class="fal fa-calendar-alt"></i>
+                                25 Mar 2021
+                            </li>
+                            <li>
+                                <i class="fal fa-comment-lines"></i>
+                                Comments (05)
+                            </li>
+                        </ul>
+                        <h4 class="post_title">
+                            <a href="#">Kerala PSC LGS Short List 2021 Released</a>
+                        </h4>
+                        <p class="post_text">
+                            Kerala Public Service Commission (KPSC) on Monday released the PSC 10th Level Result 2021
+                            for various posts on its official website
+                        </p>
+                        <a href="#" class="thm-btn bg-thm-color-white thm-color-one btn-rectangle">Read More <i
+                                class="fal fa-chevron-right ml-2"></i></a>
+                    </div>
+                </article>
+            </div>
+            <!-- post -->
+            <!-- post -->
+            <div class="col-xl-4 col-md-6">
+                <article class="post style_2 wow fadeInUp" data-wow-delay=".30ms">
+                    <div class="post_img">
+                        <img src="{% static 'assets/images/blog/WhatsApp Image 2021-10-01 at 14.41.04.jpeg' %}" alt="img"
+                             class="image-fit">
+                    </div>
+                    <div class="post_caption">
+                        <ul class="post_meta">
+                            <li>
+                                <i class="fal fa-calendar-alt"></i>
+                                25 Mar 2021
+                            </li>
+                            <li>
+                                <i class="fal fa-comment-lines"></i>
+                                Comments (05)
+                            </li>
+                        </ul>
+                        <h4 class="post_title">
+                            <a href="#">Preparation Tips& Tricks to Crack Kerala PSC Exam</a>
+                        </h4>
+                        <p class="post_text">
+                            Kerala PSC conducts exam of different hues depending on the post's desired qualifications
+                            and requirements.
+                        </p>
+                        <a href="#" class="thm-btn bg-thm-color-white thm-color-one btn-rectangle">Read More <i
+                                class="fal fa-chevron-right ml-2"></i></a>
+                    </div>
+                </article>
+            </div>
+            <!-- post -->
+            <!-- post -->
+            <div class="col-xl-4 col-md-6">
+                <article class="post style_2 wow fadeInDown" data-wow-delay=".40ms">
+                    <div class="post_img">
+                        <img src="{% static 'assets/images/blog/WhatsApp Image 2021-10-01 at 14.40.58.jpeg' %}" alt="img"
+                             class="image-fit">
+                    </div>
+                    <div class="post_caption">
+                        <ul class="post_meta">
+                            <li>
+                                <i class="fal fa-calendar-alt"></i>
+                                25 Mar 2021
+                            </li>
+                            <li>
+                                <i class="fal fa-comment-lines"></i>
+                                Comments (05)
+                            </li>
+                        </ul>
+                        <h4 class="post_title">
+                            <a href="#">Kerala graduate level common prelims exam admit card </a>
+                        </h4>
+                        <p class="post_text">
+                            The Kerala graduate-level prelims admit cards will be available on the official website of
+                            the Kerala Public Service Commission
+                        </p>
+                        <a href="#" class="thm-btn bg-thm-color-white thm-color-one btn-rectangle">Read More <i
+                                class="fal fa-chevron-right ml-2"></i></a>
+                    </div>
+                </article>
+            </div>
+            <!-- post -->
+        </div>
+    </div>
+</section>
+<!-- Blog End -->
+<!-- Cta Start -->
+<div class="cta_box style_2">
+    <div class="container relative z-2">
+        <div class="bg-thm-color-two cta_box_inner z-2 mb-negative">
+            <img src="{% static 'assets/images/elements/shape.png' %}" alt="shape" class="shape_1 zoom-fade">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-6">
+                    <div class="text_block wow fadeInLeft">
+                        <div class="section-title left-align white">
+                            <p class="subtitle">
+                                <i class="fal fa-book"></i>
+                                Get Admission
+                            </p>
+                            <h3 class="title">The Route to the Right Career</h3>
+                            <a href="#" class="thm-btn bg-thm-color-three thm-color-three-shadow btn-rectangle">Contact
+                                Us <i class="fal fa-chevron-right ml-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="image_box relative z-1 wow fadeInRight">
+                        <img src="{% static 'assets/images/elements/square_shape.png' %}" alt="shape" class="shape_2 rotate_elem">
+                        <img src="{% static 'assets/images/admission (3).png' %}" alt="img" class="image-fit">
+                        <div class="arrows slideRight">
+                            <div class="arrow"></div>
+                            <div class="arrow"></div>
+                            <div class="arrow"></div>
+                            <div class="arrow"></div>
+                            <div class="arrow"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="arrows to_up slideTop">
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+        </div>
+    </div>
+</div>
+<!-- Cta End -->
+<!-- Plane Star
+<div class="bg-thm-color-two plane_box relative z-1">
+    <div class="container relative z-1">
+        <div class="row justify-content-center">
+            <div class="col-xl-9 col-lg-11 relative z-1">
+                <img src="assets/images/elements/element_6.png" class="element_1 rotate_elem" alt="Element">
+                <h2 class="thm-color-white">The Route to the Right Career</h2>
+            </div>
+        </div>
+        <img src="assets/images/elements/element_7.png" class="element_2 zoom-fade" alt="Element">
+    </div>
+</div>
+ Plane End -->
+<!-- Footer Start -->
+{% include 'footer.html' %}
+
+<!-- Footer End -->
+<a href="#" data-target="html" class="back-to-top ft-sticky">
+    <i class="fal fa-long-arrow-up"></i>
+</a>
+
+{% endblock base %}

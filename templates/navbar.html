@@ -1,0 +1,371 @@
+{% load static %}
+
+<!-- Mobile Menu Start -->
+<aside class="aside_bar aside_bar_left aside_mobile">
+
+    <!-- logo -->
+    <a href="{% url 'home' %}" class="logo">
+        <img src="{% static 'assets/images/Malayalam VV color.svg' %}" alt="logo">
+        </a>
+        <!-- logo -->
+        <!-- Menu -->
+        <nav>
+            <ul class=" main-menu">
+        <li class="menu-item">
+            <a href="{% url 'home' %}" class="btn">Home</a>
+        </li>
+        <li class="menu-item menu-item-has-children">
+                            <a href="#">About</a>
+                            <ul class="sub-menu">
+                                <li class="menu-item">
+                                    <a href="{% url 'about_rutronix' %}">Rutronix</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'about_vijayaveedhi' %}">Vijayaveedhi</a>
+                                </li>
+                            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="#">Courses</a>
+        </li>
+        <li class="menu-item">
+            <a href="#">Online</a>
+        </li>
+        <li class="menu-item">
+            <a href="#">Notifications</a>
+        </li>
+        <li class="menu-item menu-item-has-children">
+            <a href="#">Study Centers</a>
+            <ul class="sub-menu">
+                <li class="menu-item">
+                    <a href="{% url 'vtc' %}">VTCs</a>
+                </li>
+                <li class="menu-item">
+                    <a href="{% url 'affiliation' %}">Affiliations</a>
+                </li>
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="{% url 'contact' %}">contact us</a>
+        </li>
+        </ul>
+        </nav>
+        <!-- Menu -->
+</aside>
+<div class="aside-overlay trigger-left"></div>
+<!-- Mobile Menu End -->
+
+<!-- Canvas Start -->
+<aside class="aside_bar aside_bar_right aside_canvas">
+    <!-- logo -->
+    <a href="{% url 'home' %}" class="logo pl-0">
+        <img src="{% static 'assets/images/Malayalam VV color.svg' %}" alt="logo">
+        </a>
+        <!-- logo -->
+        <p>The " Vijayaveedhi" training project has been designed by KERALA STATE RUTRONIX for imparting training to the
+        employment seekers for attending various competitive examinations for the recruitment's conducted by Kerala
+        PSC.</p>
+        <div class="sidebar">
+            <div class="sidebar_widget recent_widgets">
+                <h5 class="widget_title">PSC Coaching</h5>
+                <ul>
+                    <li>
+                        <div class="image">
+                            <img src="{% static 'assets/images/coach/222.png' %}" alt="img" class="image-fit">
+                        </div>
+                        <div class=" text">
+                            <h6 class="mb-0">
+                                <a href="#">SSLC LEVEL</a>
+                            </h6>
+                            <p class="mb-0"><strong></strong><a href="#">Preliminary and Main <br>Coaching Programs</a>
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="image">
+                            <img src="{% static 'assets/images/coach/111.png' %}" alt="img" class="image-fit">
+                        </div>
+                        <div class=" text">
+                            <h6 class="mb-0"><a href="#">PLUS TWO LEVEL</a></h6>
+                            <p class="mb-0"><strong></strong><a href="#">Preliminary and Main<br>Coaching Programs</a>
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="image">
+                            <img src="{% static 'assets/images/coach/333.png' %}" alt="img" class="image-fit">
+                        </div>
+                        <div class=" text">
+                            <h6 class="mb-0"><a href="#">DEGREE LEVEL</a></h6>
+                            <p class="mb-0"><strong> </strong><a href="#">Preliminary and Main<br>Coaching Programs</a>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar_widget">
+                <h5 class="widget_title">Upcomming Courses</h5>
+                <div class="tags">
+                    <a href="#">UPSC</a>
+                    <a href="#">SSC</a>
+                    <a href="#">Banking Service Recruitment Board</a>
+                    <a href="#">Railway Recruitment Board</a>
+                    <a href="#">Other Govt./Public Sector Agencies and Bodies etc.</a>
+                </div>
+            </div>
+        </div>
+</aside>
+<div class="aside-overlay trigger-right"></div>
+<!-- Canvas End -->
+<!-- Header Start -->
+
+<header class="header header-absolute can-sticky">
+    <div class="topbar bg-thm-color-two">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <!--
+                        <div class="left-side">
+                            <p>Admission Going On, Enroll Now</p>
+                            <div class="countdown-timer" style="color:White; font-weight:400;" data-countdown="2022/05/06">0</div>
+                        </div>
+                        -->
+                </div>
+                <div class="col-lg-5">
+                    <ul class="right-side">
+                        <li>
+                            <a href="tel:0123456789">
+                                <i class="fal fa-phone"></i>
+                                Call : +91 90 7215 1980
+                            </a>
+                        </li>
+                        <!-- <li>
+                             <a href="https://webtend.net/cdn-cgi/l/email-protection#63061b020e130f0623061b020e130f064d000c0e">
+                                 <i class="fal fa-envelope"></i>
+                                 <span class="__cf_email__" data-cfemail="afcad7cec2dfc3caefcad7cec2dfc3ca81ccc0c2">[email&#160;protected]</span>
+                             </a>
+                         </li> -->
+                        <li class="menu-item menu-item-has-children">
+                        {% if not request.user.is_authenticated %}
+                            <button class=" bg-thm-color-two btn-rounded wow fadeInRight" style="color:white;"><i
+                                    class="far fa-user"></i> Login
+                            </button>
+                        {% endif %}
+                            <ul class="sub-menu">
+                                <li class="menu-item">
+                                    <a href="{% url 'login' %}">Student</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'login' %}">VTC</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'login' %}">Admin</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    {% if request.user.is_authenticated %}
+                        <li class="menu-item menu-item-has-children">
+                            <button class=" bg-thm-color-two btn-rounded wow fadeInRight text-uppercase" style="color:white;"><i
+                                    class="far fa-user"></i> {{user.name}}
+                            </button>
+                            <ul class="sub-menu">
+                                <li class="menu-item">
+                                    <a href="{% url 'view_profile' %}">Profile</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'logout' %}"><i class="bi bi-box-arrow-right"></i>Logout</a>
+                                </li>
+                                {% if not request.user.is_authenticated %}
+                                    <li class="menu-item">
+                                        <a href="#">Admin</a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </li>
+                        {% endif %}
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <!-- inner -->
+        <div class="nav_warp">
+            <nav>
+                <!-- logo start -->
+                <div class="logo">
+                    <a href="{% url 'home' %}">
+                        <img src="{% static 'assets/images/final logo 3.svg' %}" alt="logo">
+                    </a>
+                    </div>
+                    <!-- logo end -->
+                    <!-- Navigation Start -->
+                    <ul class=" main-menu">
+                        <li class="menu-item">
+                            <a href="{% url 'home' %}" class="btn" style="padding-top:14px;">Home</a>
+                        </li>
+
+                {% if request.user.is_authenticated %}
+                    {% if request.user.user_type == 3 or request.user.user_type == 4 %}
+                        <li class="menu-item menu-item-has-children">
+                            <a href="#">VTC</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item">
+                                        <a href="{% url 'view_vtcs' %}" class="btn" style="padding-top:14px;"> SHOW VTC'S</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="{% url 'vtc_list_upload' %}" class="btn" style="padding-top:14px;">Add New VTC</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="{% url 'affiliation_request_list' %}" class="btn" style="padding-top:14px;">View vtc Requests</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="{% url 'test_question' %}" class="btn" style="padding-top:14px;">Test Questions</a>
+                                    </li>
+                                </ul>
+                        </li>
+
+
+
+
+
+
+
+
+<!--                        <li class="menu-item">-->
+<!--                            <a href="{% url 'view_vtcs' %}" class="btn" style="padding-top:14px;">VTC'S</a>-->
+<!--                        </li>-->
+<!--                        <li class="menu-item">-->
+<!--                            <a href="{% url 'vtc_list_upload' %}" class="btn" style="padding-top:14px;">Add New VTC</a>-->
+<!--                        </li>-->
+<!--                        <li class="menu-item">-->
+<!--                            <a href="{% url 'affiliation_request_list' %}" class="btn" style="padding-top:14px;">View Requests</a>-->
+<!--                        </li>-->
+                        <li class="menu-item">
+                            <a href="{% url 'home' %}" class="btn" style="padding-top:14px;">Reports</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="{% url 'view_courses' %}" class="btn" style="padding-top:14px;">Courses</a>
+                        </li>
+<!--                        <li class="menu-item">-->
+<!--                            <a href="{% url 'test_question' %}" class="btn" style="padding-top:14px;">Test Questions</a>-->
+<!--                        </li>-->
+                        <li class="menu-item">
+                            <a href="{% url 'home' %}" class="btn" style="padding-top:14px;">Answer key</a>
+                        </li>
+                    {% endif %}
+                {% endif %}
+                {% if request.user.is_authenticated %}
+                    {% if request.user.user_type == 2 %}
+                         <li class="menu-item">
+                            <a href="{% url 'add_batch' %}" class="btn" style="padding-top:14px;">Add Batch</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="{% url 'add_student' %}" class="btn" style="padding-top:14px;">Add Student</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="{% url 'vtc_student_list' %}" class="btn" style="padding-top:14px;">View Students</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="{% url 'show_test_questions' %}" class="btn" style="padding-top:14px;">Test Questions</a>
+                        </li>
+                        {% comment %}
+                        <!--<li class="menu-item">
+                            <a href="{% url 'add_vtcs' %}" class="btn" style="padding-top:14px;">Add New VTC</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="{% url 'affiliation_request_list' %}" class="btn" style="padding-top:14px;">View Requests</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="{% url 'home' %}" class="btn" style="padding-top:14px;">Reports</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="{% url 'view_courses' %}" class="btn" style="padding-top:14px;">Courses</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="{% url 'home' %}" class="btn" style="padding-top:14px;">Answer key</a>
+                        </li>-->
+                        {% endcomment %}
+                    {% endif %}
+                {% endif %}
+
+                    {% if not request.user.is_authenticated %}
+                        <li class="menu-item menu-item-has-children">
+                            <a href="#">About</a>
+                            <ul class="sub-menu">
+                                <li class="menu-item">
+                                    <a href="{% url 'about_rutronix' %}">Rutronix</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'about_vijayaveedhi' %}">Vijayaveedhi</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">Courses</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">Online</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">Notifications</a>
+                        </li>
+                        <li class="menu-item menu-item-has-children">
+                            <a href="#">Study Centers</a>
+                            <ul class="sub-menu">
+                                <li class="menu-item">
+                                    <a href="{% url 'vtc' %}">VTCs</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{% url 'affiliation' %}">Affiliation</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <a href="{% url 'contact' %}">contact us</a>
+                        </li>
+                        </ul>
+                    {% endif %}
+                        <!-- Navigation Ens -->
+            </nav>
+            <!-- Head Actions -->
+            <div class="head_actions">
+                <!-- Search
+                <ul class="main-menu">
+                <li class="menu-item menu-item-has-children">
+                        <!--<a href="#">Login</a>-->
+                <!-- <button class="thm-btn-login thm-btn bg-thm-color-two btn-rounded mr-4 mb-2 wow fadeInRight">Login</button>
+                 <ul class="sub-menu">
+                     <li class="menu-item">
+                         <a href="#">Student</a>
+                     </li>
+                     <li class="menu-item">
+                         <a href="#">VTC</a>
+                     </li>
+                     <li class="menu-item">
+                         <a href="#">Admin</a>
+                     </li>
+                 </ul>
+             </li>
+             </ul>
+             -->
+                <button type="button" class="head_trigger desktop_trigger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <button type="button" class="head_trigger mobile_trigger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <!-- Head Actions -->
+        </div>
+        <!-- inner -->
+    </div>
+</header>

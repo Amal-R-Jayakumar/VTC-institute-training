@@ -1,0 +1,59 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block base %}
+{% include 'navbar.html' %}
+
+<div class="container" style="margin-top: 9rem;">
+<form action="" method="POST" id="personForm" data-cities-url="{% url 'ajax_load_cities' %}">
+    
+    {% csrf_token %}
+    {% for error in vtc_user_form.non_field_errors %}
+    <div class="alert alert-danger">{{error}}</div>
+    {% endfor %}
+    {% for error in vtc_profile_form.non_field_errors %}
+    <div class="alert alert-danger">{{error}}</div>
+    {% endfor %}
+    
+    
+    {{vtc_user_form.as_p}}
+    {{vtc_profile_form.as_p}}
+
+<input type="submit" value="register">
+</form>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    $("#id_district").change(function () {
+        const url = $("#personForm").attr("data-cities-url");  // get the url of the `load_cities` view
+        const districtId = $(this).val();  // get the selected country ID from the HTML input
+
+        $.ajax({                       // initialize an AJAX request
+            url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
+            data: {
+                'district_id': districtId       // add the country id to the GET parameters
+            },
+            success: function (data) {   // `data` is the return of the `load_cities` view function
+                $("#id_municipality").html(data);  // replace the contents of the city input with the data that came from the server
+                console.log(html_data);
+                /*
+
+                let html_data = '<option value="">---------</option>';
+                data.forEach(function (city) {
+                    html_data += `<option value="${city.id}">${city.name}</option>`
+                });
+                console.log(html_data);
+                $("#id_city").html(html_data);
+
+                */
+            }
+        });
+
+    });
+</script>
+
+{% include 'footer.html' %}
+<a href="#" data-target="html" class="back-to-top ft-sticky">
+    <i class="fal fa-long-arrow-up"></i>
+
+  {% endblock base %}

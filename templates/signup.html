@@ -1,0 +1,287 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+{% block base %}
+{% include 'navbar.html' %}
+
+
+
+<div class="card card-login mx-auto text-center bg-white" style="max-width: 30rem; margin-top: 8rem;margin-bottom: 3rem;;">
+  <div class="card-header mx-auto bg-white" style="border-bottom: 0px solid;">
+      <span> <img src="{% static 'assets/images/Malayalam VV color.svg' %}" class="w-75" alt="Logo"> </span><br/>
+                  <span class="logo_title mt-5 text-dark"> Register Here </span>
+  </div>
+  <div class="card-body">
+      <form action="" method="post">
+          {% csrf_token %}
+          {% for error in sign_up_form.non_field_errors %}
+            <div class="alert alert-danger">{{error}}</div>
+          {% endfor %}
+          {% for error in profile_form.non_field_errors %}
+            <div class="alert alert-danger">{{error}}</div>
+          {% endfor %}
+         
+          <div class="input-group form-group">
+            {% if  sign_up_form.name.errors %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              {{sign_up_form.name.errors}}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            {% endif %}
+          <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-user"></i></span>
+            </div>
+            {{sign_up_form.name}}
+          </div>
+
+          <div class="input-group form-group">
+            {% if  sign_up_form.contact_number.errors %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              {{sign_up_form.contact_number.errors}}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            {% endif %}
+          <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-mobile" aria-hidden="true"></i></span>
+            </div>
+            {{sign_up_form.contact_number}}
+          </div>
+
+          <div class="input-group form-group">
+            {% if  sign_up_form.email.errors %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              {{sign_up_form.email.errors}}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            {% endif %}
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+            </div>
+            {{sign_up_form.email}}
+          </div>
+
+          <div class="input-group form-group">
+            {% if  sign_up_form.gender.errors %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              {{sign_up_form.gender.errors}}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            {% endif %}
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-user"></i></span>
+            </div>
+            {{sign_up_form.gender}}
+          </div>
+
+          
+            {% if  profile_form.dob.errors %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              {{profile_form.dob.errors}}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            {% endif %}
+            <div class="row" style="position: absolute; z-index: 1; margin-left: 3rem; max-height: 19px; margin-top: -11px; background-color: whitesmoke;">
+              <label for="dob"><small>Date of Birth</small></label>
+            </div>
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>
+              </div>
+            {{profile_form.dob}}
+          </div>
+
+          <div class="input-group form-group">
+            {% if  profile_form.address.errors %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              {{profile_form.address.errors}}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+             {% endif %}
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-address-card" aria-hidden="true"></i></span>
+            </div>
+            {{profile_form.address}}
+          </div>
+
+          <div class="input-group form-group">
+            {% if  profile_form.qualification.errors %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              {{profile_form.qualification.errors}}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            {% endif %}
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-trophy" aria-hidden="true"></i></span>
+            </div>
+            {{profile_form.qualification}}
+          </div>
+
+          <div class="input-group form-group">
+            {% if  sign_up_form.password1.errors %}
+              <div class="alert alert-danger">{{sign_up_form.password1.errors}}</div>
+            {% endif %}
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-lock" aria-hidden="true"></i></span>
+            </div>
+            {{sign_up_form.password1}}
+          </div>
+
+          
+            {% if  sign_up_form.password2.errors %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              Please enter a strong Password
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            {% endif %}
+
+            
+            
+
+            <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-lock" aria-hidden="true"></i></span>
+            </div>
+            {{sign_up_form.password2}}
+          </div>
+          <div class="form-group mx-auto w-30">
+            <input type="submit" name="btn" value="Register" class="btn btn-outline-dark float-center  login_btn">
+          </div>
+        </form>
+      </div>
+    </div>
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="card d-block mx-auto" style="margin-top: 8rem; width: 29rem;">
+      <div class="card-header">Sign Up</div>
+      <div class="card-body">
+        {% load widget_tweaks %}
+        <form action="" method="post">
+          {% csrf_token %}
+          {% for error in sign_up_form.non_field_errors %}
+            <div class="alert alert-danger">{{error}}</div>
+          {% endfor %}
+
+          {% for error in profile_form.non_field_errors %}
+            <div class="alert alert-danger">{{error}}</div>
+          {% endfor %}
+          
+          
+          <div class="form-group">
+            {% if  sign_up_form.name.errors %}
+            <div class="alert alert-danger">{{sign_up_form.name.errors}}</div>
+            {% endif %}
+            <label for="name" class="label">Name</label>
+            {{sign_up_form.name}}
+          </div>
+
+          <div class="form-group">
+            {% if  sign_up_form.contact_number.errors %}
+              <div class="alert alert-danger">{{sign_up_form.contact_number.errors}}</div>
+            {% endif %}
+            <label for="contact_number" class="label">Contact num</label>
+            {{sign_up_form.contact_number}}
+          </div>
+
+          <div class="form-group">
+            {% if  sign_up_form.email.errors %}
+              <div class="alert alert-danger">{{sign_up_form.email.errors}}</div>
+            {% endif %}
+            <label for="email" class="label">email</label>
+            {{sign_up_form.email}}
+          </div>
+
+          <div class="form-group">
+            {% if  sign_up_form.gender.errors %}
+              <div class="alert alert-danger">{{sign_up_form.gender.errors}}</div>
+            {% endif %}
+            <label for="gender" class="label">gender</label>
+            {{sign_up_form.gender}}
+          </div>
+
+          <div class="form-group">
+            {% if  profile_form.dob.errors %}
+              <div class="alert alert-danger">{{profile_form.dob.errors}}</div>
+            {% endif %}
+            <label for="dob" class="label">dob</label>
+            {{profile_form.dob}}
+          </div>
+
+          <div class="form-group">
+            {% if  profile_form.address.errors %}
+              <div class="alert alert-danger">{{profile_form.address.errors}}</div>
+            {% endif %}
+            <label for="address" class="label">address</label>
+            {{profile_form.address}}
+          </div>
+
+          <div class="form-group">
+            {% if  profile_form.qualification.errors %}
+              <div class="alert alert-danger">{{profile_form.qualification.errors}}</div>
+            {% endif %}
+            <label for="qualification" class="label">qualification</label>
+            {{profile_form.qualification}}
+          </div>
+
+
+          <div class="form-group">
+            {% if  sign_up_form.password1.errors %}
+              <div class="alert alert-danger">{{sign_up_form.password1.errors}}</div>
+            {% endif %}
+            <label for="password1" class="label">password</label>
+            {{sign_up_form.password1}}
+          </div>
+
+          <div class="form-group">
+            {% if  sign_up_form.password2.error %}
+              <div class="alert alert-danger">{{sign_up_form.password2.errors}}</div>
+            {% endif %}
+            <label for="password2" class="label">confirm password</label>
+            {{sign_up_form.password2}}
+          </div>
+          <input type="submit" value="submit">
+        </form>
+      </div>
+    </div>-->
+
+    <script>
+      $(function () {
+        $("#id_date").datepicker({
+          format:'dd/mm/yyyy',
+        });
+      });
+    </script>
+  {% include 'footer.html' %}
+
+  {% endblock base %}
+

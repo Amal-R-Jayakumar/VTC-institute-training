@@ -1,0 +1,88 @@
+{% extends 'base.html' %} {% load static %} {% block base %} {% include 'navbar.html' %}
+<!--<div style="margin-top: 9rem;">
+<form action="" method="POST">
+    {% csrf_token %}
+
+    {{student_user_form.as_p}}
+    {{student_profile_form.as_p}}
+    {{student_enrollment_form.as_p}}
+    <input type="submit" value="submit">
+
+</form>
+</div>-->
+
+<link href="{% static 'assets/css/add_student.css' %}" rel="stylesheet" />
+
+<div class="container" style="margin-top: 9rem">
+  <div class="row justify-content-center" style="width: 800px">
+    <div class="col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
+      <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+        <div class="text mb-md-80">
+          <div class="col-md-12 col-lg-12 register-left"><img src="{% static 'assets/images/icons/reg.png' %}" style="width: 80px; margin: 20px 0 -20px 0" alt="" /></div>
+          <h3 class="fw-600 title" style="color: white; font-weight: 400; margin-top: 40px; margin-bottom: 20px; font-size: 30px">STUDENT REGISTRATION</h3>
+        </div>
+        <!--<p style="color:#ececec;">Fill all form field to go to next step</p>-->
+        {%for message in messages %}
+        <p class="{{message.tags}}">{{message}}</p>
+        {% endfor %}
+        <form method="POST" id="msform">
+
+          {% csrf_token %}
+          <fieldset>
+            <div class="form-card wow fadeInUp">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">{{student_user_form.name}}</div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">{{student_user_form.contact_number}}</div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">{{student_user_form.email}}</div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">{{student_user_form.gender}}</div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">{{student_profile_form.qualification}}</div>
+                </div>
+                <div class="col-lg-6" style="display: none">
+                  <div class="form-group">{{student_enrollment_form.mode_of_training}}</div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">{{student_enrollment_form.category}}</div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">{{student_enrollment_form.course}}</div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">{{student_enrollment_form.batch}}</div>
+                </div>
+                <div class="col-lg-6" style="display: none">
+                  <div class="form-group">
+                    <!--{{student_profile_form.code}}-->
+                    <input type="text" value="{{request.user.profile.code}}" name="code" />
+                  </div>
+                </div>
+
+                <!--<div class="col-lg-12">
+                                <button type="button"
+                                        class="thm-btn bg-thm-color-three thm-color-three-shadow btn-rectangle" name="next">Send Message
+                                    <i class="fal fa-chevron-right ml-2"></i></button>
+                            </div>-->
+              </div>
+            </div>
+            <!--<input type="button" name="next" class="next action-button" value="Next" />-->
+            <div class="col-lg-12">
+              <div class="form-group" style="margin: 0 auto; width: 220px; padding-bottom: 25px; margin-top: -20px">
+                <br /><button type="submit" class="thm-btn bg-thm-color-three thm-color-three-shadow btn-rectangle" style="width: 205px">Add Student <i class="fal fa-chevron-right ml-2"></i></button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include 'footer.html' %} {% endblock base %}

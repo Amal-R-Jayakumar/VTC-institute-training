@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block base %}
+{% include 'navbar.html' %}
+
+<div class="container" style="margin-top: 5rem;">
+    <div class="row">
+          <!-- Coach Grid Start -->
+    
+        <section class="section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                      <div class="section-title wow fadeInDown">
+                        <p class="subtitle">
+                            <i class="fal fa-book"></i>
+                            Vijayaveedhi Training Programs
+                        </p>
+                        <h3 class="title">PSC Courses</h3>
+                      </div>
+                     </div>
+                    <!-- Coach block -->
+                {% for list_courses in courses %}
+                    <div class="col-xl-4 col-md-6">
+                        <div class="coach_block wow fadeInUp" data-wow-delay=".10ms">
+                            <div class="coach_img">
+                                <img src="{% static 'assets/images/coach/courses design.jpg' %}" alt="img" class="img-fluid">
+                                <div class="coach_badges">
+                                    <span class="tag_badge bg-thm-color-four" style="font-family:sans-serif; font-weight:600;">
+                                        <span style="font-weight:400;">₹ </span> {{list_courses.price}}/-</span>
+                                </div>
+                            </div>
+                            <div class="coach_caption">
+                                <!--<div class="coach_meta">
+                                    <a href="courses.html" class="coach_cat thm-btn bg-thm-color-three thm-color-three-shadow btn-rounded">Business</a>
+                                    <div class="ratings">
+                                        <i class="fal fa-star active"></i>
+                                        <i class="fal fa-star active"></i>
+                                        <i class="fal fa-star active"></i>
+                                        <i class="fal fa-star active"></i>
+                                        <i class="fal fa-star"></i>
+                                    </div>
+                                </div>-->
+                                <h5 class="title mb-xl-20">
+                                    <a href="course-details.html">
+                                        {{list_courses.course_name}}
+                                    </a>
+                                </h5>
+                                <div class="sidebar">
+                        <div class=" info_widgets wow fadeInUp">
+                            <ul>
+                                <li>
+                                    <div class="left-side">
+                                        <i class="fal fa-user-circle"></i>
+                                        <h6 class="mb-0">Eligibility</h6>
+                                    </div>
+                                    <div class="right-side">
+                                        
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="left-side">
+                                        <i class="fal fa-clock"></i>
+                                        <h6 class="mb-0">Duration</h6>
+                                    </div>
+                                    <div class="right-side">
+                                        360 Hours
+                                    </div>
+                                </li>
+                                <hr>
+                                <li>
+                                    <div class="left-side">
+                                        <a href="contact.html" class="thm-btn bg-thm-color-three thm-color-three-shadow btn-rectangle" style="padding:13px 30px;">Enrollments</a>
+                                    </div>
+                                    <div class="right-side">
+                                        <a href="contact.html" class="thm-btn bg-thm-color-three thm-color-three-shadow btn-rectangle" style="padding:13px 30px;">Curriculum</a>
+                                    </div>
+                                </li>
+                            </ul>
+              
+                        </div>
+                        
+                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Coach block -->
+                {% endfor %}
+                  
+                    
+                </div>
+            </div>
+        </section>
+    
+    <!-- Coach Grid End -->
+    </div>
+</div>
+
+{% include 'footer.html' %}
+{% endblock base %}

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block base %}
+{% include 'navbar.html' %}
+
+
+
+
+    <div class="card card-login mx-auto text-center bg-white" style="max-width: 30rem; margin-top: 8rem;margin-bottom: 3rem;;">
+        <div class="card-header mx-auto bg-white" style="border-bottom: 0px solid;">
+            <span> <img src="{% static 'assets/images/Malayalam VV color.svg' %}" class="w-75" alt="Logo"> </span><br/>
+                        <span class="logo_title mt-5 text-dark"><small>Login Here</small> </span>
+        </div>
+        <div class="card-body">
+            <form action="" method="post">
+                {% csrf_token %}
+                {% for message in messages %}
+                    <div class="alert alert-warning" role="alert">
+                    <p>{{message}}</p>
+                    </div>
+                {% endfor %}
+                {% for error in form.non_field_errors %}
+                    <div class="alert alert-danger">{{error}}</div>
+                {% endfor %}
+                <div class="input-group form-group">
+                    {% if  form.username.error %}
+                        <div class="alert alert-danger">{{form.username.error}}</div>
+                    {% endif %}
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    </div>
+                   {{form.username}}
+                </div>
+
+                <div class="input-group form-group">
+                    {% if  form.password.error %}
+                        <div class="alert alert-danger">{{form.password.error}}</div>
+                    {% endif %}
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                    </div>
+                    {{form.password}}
+                </div>
+
+                <div class="form-group mx-auto w-30">
+                    <input type="submit" name="btn" value="Login" class="btn btn-outline-dark float-center  login_btn">
+                </div>
+                <a href="{% url 'reset_password' %}">Forgot password</a><br>
+                <a href="{% url 'signup' %}"><strong>Signup Here</strong></a>
+            </form>
+           
+        </div>
+    </div>
+
+{% include 'footer.html' %}
+{% endblock base %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block base %}
+{% include 'navbar.html' %}
+
+
+<div class="container" style="margin-top: 9rem;">
+<h3 class="text-center">VTC Request's</h3>
+        <table class="table">
+             <thead>
+                  <tr>
+                      
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Mobile</th>
+                    <th scope="col">Center Location</th>
+                    <th scope="col">Localbody type</th>
+                    <th scope="col">Localbody Name</th>
+                    <th scope="col">District</th>
+                    <th scope="col">Action</th>
+                  </tr>
+             </thead>
+            
+                {% for data in datas %}
+                    <tr>
+                      <td>{{ data.owner_name }}</td>
+                      <td>{{ data.email }}</td>
+                      <td>{{ data.contact_number }}</td>
+                      <td>{{ data.location }}</td>
+                      <td>{{ data.localbodytype }}</td>
+                      <td>{{ data.localbodyname }}</td>
+                      <td>{{ data.district }}</td>
+                      <td>
+                        
+                        <a class="btn btn-info mr-1" href="/affiliation-request-response/{{data.id}}">Accept</span>
+                        <a class="btn btn-danger"href="">Decline</a>
+                          
+                      </td>
+                    </tr>
+                {% endfor %}
+        </table>
+    </div>
+        {% include 'footer.html' %}
+        {% endblock base %}

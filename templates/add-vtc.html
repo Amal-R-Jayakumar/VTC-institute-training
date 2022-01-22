@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block base %}
+{% include 'navbar.html' %}
+
+<div class="container" style="margin-top: 9rem;">
+<form action="" method="POST" id="personForm" data-cities-url="{% url 'ajax_load_cities' %}">
+    
+    {% csrf_token %}
+    {% for error in vtc_user_form.non_field_errors %}
+    <div class="alert alert-danger">{{error}}</div>
+    {% endfor %}
+    {% for error in vtc_profile_form.non_field_errors %}
+    <div class="alert alert-danger">{{error}}</div>
+    {% endfor %}
+    
+    
+    {{vtc_user_form.as_p}}
+    {{vtc_profile_form.as_p}}
+
+<input type="submit" value="register">
+</form>
+</div>
+{% include 'footer.html' %}
+{% endblock base %}

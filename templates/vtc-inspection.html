@@ -1,0 +1,556 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block base %}
+{% include 'navbar.html' %}
+
+    <link href="{% static 'assets/css/inspectionform.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/checkbox.css' %}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<section id="online" style="margin-top:9rem;">
+<div class="user-ragistration">
+	<div class=" register" style="padding-bottom:6rem;">
+        <div class="container">
+                <div class="row">
+                    <!--<div>
+                        <img src="{% static 'assets/images/event/img1.jpg' %} " style="position:fixed; z-index:999; left:0; top:168px; height:100vh; width:430px;" alt=""/>
+                    </div>-->
+                   
+                    <div class="col-md-12 register-right">
+                        <!--<ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">English</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Malayalam</a>
+                            </li>
+                        </ul>-->
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                             <div class="col-md-12 col-lg-12 register-left" ><img src="{% static 'assets/images/icons/reg.png' %}"  alt=""/> </div>
+                                <h3 class="register-heading" style="color:white;">VTC INSPECTION FORM</h3>
+                               
+                                <div class="row register-form">
+                                <div class="col-md-12 col-lg-12"> 
+                                  </div>
+                                    <div class="col-xl-6 col-lg-12 col-md-12">
+                                        <div class="form-group add-img-mob" style="margin-bottom:0;">
+                                           
+                                        <div class="form-group inputDnD" style="margin-bottom:0;">
+                                         
+                                          <input type="file" class=" form-control form-control-custom style_2 form-control-file text-primary font-weight-bold" id="inputFile" accept="image/*" onchange="readUrl(this)" data-title="Add Applicant Passport Size Photo">
+                                          <label style="color:white; font-weight:200; margin-bottom:0;">
+                                            Only JPG format is supported. .Max File Size 15MB
+                                        </label>
+                                       
+                                        </div>
+                                            
+                                        </div>
+                                        <div class="form-group">
+                                        <label>1. Name of the applicant</label>
+                                            <input type="text" readonly class="form-control form-control-custom style_2" placeholder="Name of the applicant *" value="{{ obj.owner_name }}" />
+                                        </div>
+                                        <div class="form-group">
+                                        <label>2. Applicant Address</label>
+                                            <textarea class="form-control form-control-custom style_2" placeholder="Applicant Address *" rows="3"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                        <label>3. Contact Number</label>
+                                            <input type="tel" readonly class="form-control form-control-custom style_2" placeholder="Mobile Number *" value="{{ obj.contact_number }}" />
+                                        </div>
+                                        <div class="form-group">
+                                        <label>4. E-mail Id</label>
+                                            <input type="email" readonly class="form-control form-control-custom style_2"  placeholder="E-mail Id *" value="{{ obj.email }}" />
+                                        </div>
+                                        <div class="form-group">
+                                        <label>5. Name of institution</label>
+                                            <input type="text" class="form-control form-control-custom style_2"  placeholder="Name of Institution *" value="" />
+                                        </div>
+                                        <div class="form-group mb-0">
+                                        <label>6. Type of institution</label>
+                                            <input type="text" class="form-control form-control-custom style_2"  placeholder="Type of the institution *" value="" />
+                                        <label class="label_clg">
+                                          (Colleges / Schools / Parallel Colleges / Women's Associations / Computer Centers / Akshaya e-Center / Institutions run by differently abled / transgender sections / Trust-affiliated institutions / Partnerships / Individual Institutions) 
+                                        </label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>7. Localbody Type</label>
+                                            <input type="text" readonly class="form-control form-control-custom style_2" placeholder="Localbody Type *" value="{{ obj.localbodytype }}" />
+                                        <!--
+                                             <select class="form-control form-control-custom style_2">
+                                                <option class="hidden"  selected disabled>6. Please select an option below</option>
+                                                <option >Panchayat</option>
+                                                <option>Municipality</option>
+                                                <option>Corporation</option>
+                                            </select>
+                                            -->
+                                        </div>
+                                        <div class="form-group">
+                                            <label>8. Localbody Name</label>
+                                            <input type="text" readonly class="form-control form-control-custom style_2" placeholder="Localbody Type *" value="{{ obj.localbodytype }}" />
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label>9. District</label>
+                                            <input type="text" readonly class="form-control form-control-custom style_2"  placeholder="District *" value="{{ obj.district }}" />
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                        <label>10. Pincode</label>
+                                            <input type="number" readonly class="form-control form-control-custom style_2" minlength="6" maxlength="6" placeholder="9. Pincode *" value="{{ obj.pincode }}" />
+                                        </div>
+                                        <div class="form-group">
+                                        <label>11. Nearest bus stand / Railway Station</label>
+                                            <input type="text" class="form-control form-control-custom style_2"  placeholder="Nearest bus stand / Railway Station *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                        <label>12. Distance of the Institution with Nearest Bus Stand / Railway Station</label>
+                                            <input type="text" class="form-control form-control-custom style_2"  placeholder="Distance of the institution with Nearest bus stand / Railway Station *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                        <label>13. Constituency</label>
+                                            <input type="text" class="form-control form-control-custom style_2"  placeholder="Constituency *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                        <label>14. Police station boundary</label>
+                                            <input type="text" class="form-control form-control-custom style_2"  placeholder="Police station boundary *" value="" />
+                                        </div>
+                                       <!--<div class="form-group">
+                                            <div class="maxl">
+                                                <label class="radio inline"> 
+                                                    <input type="radio" name="gender" value="male" checked>
+                                                    <span> Male </span> 
+                                                </label>
+                                                <label class="radio inline"> 
+                                                    <input type="radio" name="gender" value="female">
+                                                    <span>Female </span> 
+                                                </label>
+                                            </div>
+                                        </div>--> 
+                                        <div class="form-group">
+                                        <label>15. Other affiliations existing in the organization </label>
+                                            <input type="text" class="form-control form-control-custom style_2" placeholder="Other affiliations existing in the organization *" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-12 col-md-12">
+                                        <div class="form-group add-img-com" style="margin-bottom:0;">
+                                           
+                                        <div class="form-group inputDnD" style="margin-bottom:25px;">
+                                         
+                                          <input type="file" class=" form-control form-control-custom style_2 form-control-file text-primary font-weight-bold" id="inputFile" accept="image/*" onchange="readUrl(this)" data-title="Add Applicant Passport Size Photo (JPG Format below 15MB)">
+                                          <!--<label class="photo-upld2">
+                                            Only JPG format is supported. .Max File Size 15MB
+                                        </label>-->
+                                       
+                                        </div>
+                                            
+                                        </div>
+                                        <div class="form-group" style="margin-bottom:29px;">
+                                            <label>16. Details of educational institutions in the panchayat / municipality / corporation where the institution is located </label>
+                                            <textarea class="form-control form-control-custom style_2" placeholder="Details of educational institutions in the panchayat / municipality / corporation where the institution is located *" rows="3"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>17. Phone number of the Secretary of Local Self Government Institution </label>
+                                            <input type="text" class="form-control form-control-custom style_2" placeholder="Phone number of the Secretary of Local Self Government Institution *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label>18. Distance from Panchayat / Municipality / Corporation headquarters in km </label>
+                                            <input type="text" class="form-control form-control-custom style_2" placeholder="Distance from Panchayat / Municipality / Corporation headquarters in km *" value="" />
+                                        </div>
+                                        <!--
+                                        <div class="form-group mb-1">
+                                            <label>19. Information on payment of inspection fee </label>
+                                            <input type="text" class="form-control form-control-custom style_2" placeholder="Information on payment of inspection fee *" value="" />
+                                        <label style="color:white; font-weight:200; margin-top:10px;">
+                                            In the name of Kerala State Rutronics, Rs. Pay Rs. 1785 / - and enter the name and date of the bank where the payment was made: (Keep a receipt with the details of the payment in the bank)
+                                        </label>
+                                        </div>-->
+                                        <!--<div class="form-group">
+                                            <h5 class="mb-0" style="color:white; margin-top:49px;">INSTITUTIONAL INFORMATION</h5> <p style="margin-top:0; margin-bottom:35px; color:white;">(Applies to Existing Institutions)</p>
+                                        </div>-->
+                                        <div class="form-group">
+                                            <label>20. Establishment area (square feet) </label>
+                                            <input type="text" class="form-control form-control-custom style_2" placeholder="Establishment area (square feet) *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label>21. Furniture informations </label>
+                                            <textarea class="form-control form-control-custom style_2" placeholder="Details of educational institutions in the panchayat / municipality / corporation where the institution is located *" rows="3"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <!--<input type="text" class="form-control form-control-custom style_2" placeholder="Computer / Projector / Whiteboard *" value="" />-->
+                                            <label>
+                                                <input type="checkbox" class="option-input checkbox"  />
+                                                  Computer
+                                                </label>
+                                                <label>
+                                                  <input type="checkbox" class="option-input checkbox" />
+                                                  Projector
+                                                </label>
+                                                <label>
+                                                  <input type="checkbox" class="option-input checkbox" />
+                                                  Whiteboard
+                                            </label>
+                                        </div>
+                                        <div class="form-group">
+                                        
+                                            <label>
+                                                <input type="checkbox" class="option-input checkbox"  />
+                                                  Toilet facility
+                                                </label>
+                                                <label>
+                                                  <input type="checkbox" class="option-input checkbox" />
+                                                  Library
+                                                </label>
+                                                
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                        
+                                            <label>
+                                                <input type="checkbox" class="option-input checkbox"  />
+                                                  Internet
+                                                </label>
+                                                <label>
+                                                  <input type="checkbox" class="option-input checkbox" />
+                                                  Webcam facility
+                                                </label>
+                                                <label>
+                                                  <input type="checkbox" class="option-input checkbox" />
+                                                  Printer
+                                                  </label>
+                                                  <label>
+                                                  <input type="checkbox" class="option-input checkbox" />
+                                                  Scanner
+                                                
+                                            </label>
+                                        </div>
+                                        <!--<div class="form-group">
+                                            <input type="text" class="form-control form-control-custom style_2" placeholder="Internet / webcam facility  *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-custom style_2" placeholder="Printer / Scanner  *" value="" />
+                                        </div>-->
+                                        <div class="form-group">
+                                            <label>22. Number of Current Trainers </label>
+                                            <input type="text" class="form-control form-control-custom style_2" placeholder="Number of Current Trainers *" value="" />
+                                        </div>
+                                        <!--<input type="submit" class="btnRegister"  value="Apply"/>-->
+                                    </div>
+                                    <div class="col-lg-12">
+                                         <h5 class="mb-0" style="color:white; margin-top:9px; text-align:center;">INSTRUCTORS INFORMATION</h5><!-- <p style="text-align:center; margin-top:0; margin-bottom:35px; color:white;">(Applies to Existing Institutions)</p>-->
+                                    </div>
+                                    
+                                    <div class="col-lg-12">
+                                         <div id="dynamic-field-1" class="form-group dynamic-field mb-3">
+                                           <label for="field" class="font-weight-bold" style="color:white;">Instructor 1</label>
+                                           <div class="row">
+                                           <div class="col-md-6">
+                                           <input type="text" class="form-control form-control-custom style_2" placeholder="Instructor Name *" value="" />
+                                           </div>
+                                           <div class="col-md-6">
+                                           <input type="text" class="form-control form-control-custom style_2" placeholder="Qualification *" value="" />
+                                           </div>
+                                           </div>
+                                         </div>
+                                         <div class="clearfix mt-4">
+                                         <button type="button" id="remove-button" class="btn btn-danger float-right text-uppercase ml-1" disabled="disabled"><i class="fas fa-minus fa-fw"></i> Remove</button>
+                                           <button type="button" id="add-button" class="btn btn-primary float-right text-uppercase shadow-sm"><i class="fas fa-plus fa-fw"></i> Add</button>
+                                           
+                                           
+                                         </div>                            
+                                    </div>
+                                    <div class="col-lg-12" >
+                                    <div class="form-group" style="margin:0 auto; width:270px;">
+                                         <br><button type="submit" class="thm-btn bg-thm-color-three thm-color-three-shadow btn-rectangle" style=" width:265px;">Apply for inspection
+                                         <i class="fal fa-chevron-right ml-2"></i></button>
+                                    </div>
+                                    </div>
+                                    <!--<div class="form-group w-25" style="margin:0 auto">
+                                            <input type="submit" class="bg-thm-color-three form-control form-control-custom style_2 apply " value="Apply for Inspection" />
+                                        </div>-->
+                                </div>
+                            </div>
+                            <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <div class="col-md-12 col-lg-12 register-left"><img src="{% static 'assets/images/icons/reg.png' %}" alt=""/> </div>
+                                <h3 class="register-heading" style="color:white;">VTC INSPECTION FORM</h3>
+
+                                <div class="row register-form">
+                                <div class="col-md-12 col-lg-12"> 
+                                  </div>
+                                    <div class="col-xl-6 col-lg-12 col-md-12">
+                                        <div class="form-group add-img-mob" style="margin-bottom:0;">
+                                           
+                                        <div class="form-group inputDnD" style="margin-bottom:0;">
+                                         
+                                          <input type="file" class=" form-control form-control-custom style_2 form-control-file text-primary font-weight-bold" id="inputFile" accept="image/*" onchange="readUrl(this)" data-title="Add Applicant Passport Size Photo">
+                                          <label style="color:white; font-weight:200; margin-bottom:0;">
+                                            Only JPG format is supported. .Max File Size 15MB
+                                        </label>
+                                       
+                                        </div>
+                                            
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-custom style_2 " placeholder="1. At]£Isâ t]cv *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea class="form-control form-control-custom style_2" placeholder="2. Address *" rows="3"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="tel" class="form-control form-control-custom style_2" placeholder="3. Mobile Number *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control form-control-custom style_2"  placeholder="4. E-mail Id *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-custom style_2"  placeholder="5. Name of Institution *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                             <select class="form-control form-control-custom style_2">
+                                                <option class="hidden"  selected disabled>6. Please select an option below</option>
+                                                <option >Panchayat</option>
+                                                <option>Municipality</option>
+                                                <option>Corporation</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-custom style_2"  placeholder="7. District *" value="" />
+                                        </div>
+                                        <div class="form-group mb-0">
+                                            <input type="text" class="form-control form-control-custom style_2"  placeholder="8. Type of the institution *" value="" />
+                                        <label class="label_clg">
+                                          (Colleges / Schools / Parallel Colleges / Women's Associations / Computer Centers / Akshaya e-Center / Institutions run by differently abled / transgender sections / Trust-affiliated institutions / Partnerships / Individual Institutions) 
+                                        </label>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="number" class="form-control form-control-custom style_2" minlength="6" maxlength="6" placeholder="9. Pincode *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-custom style_2"  placeholder="10. Nearest bus stand / Railway Station *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-custom style_2"  placeholder="11. Distance of the institution with serial number 10 *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-custom style_2"  placeholder="12. Constituency *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-custom style_2"  placeholder="13. Police station boundary *" value="" />
+                                        </div>
+                                       <!--<div class="form-group">
+                                            <div class="maxl">
+                                                <label class="radio inline"> 
+                                                    <input type="radio" name="gender" value="male" checked>
+                                                    <span> Male </span> 
+                                                </label>
+                                                <label class="radio inline"> 
+                                                    <input type="radio" name="gender" value="female">
+                                                    <span>Female </span> 
+                                                </label>
+                                            </div>
+                                        </div>--> 
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-custom style_2" placeholder="14. Other affiliations existing in the organization *" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-12 col-md-12">
+                                        <div class="form-group add-img-com" style="margin-bottom:0;">
+                                           
+                                        <div class="form-group inputDnD" style="margin-bottom:25px;">
+                                         
+                                          <input type="file" class=" form-control form-control-custom style_2 form-control-file text-primary font-weight-bold" id="inputFile" accept="image/*" onchange="readUrl(this)" data-title="Add Applicant Passport Size Photo (JPG Format below 15MB)">
+                                          <!--<label class="photo-upld2">
+                                            Only JPG format is supported. .Max File Size 15MB
+                                        </label>-->
+                                       
+                                        </div>
+                                            
+                                        </div>
+                                        <div class="form-group" style="margin-bottom:29px;">
+                                            
+                                            <textarea class="form-control form-control-custom style_2" placeholder="15. Details of educational institutions in the panchayat / municipality / corporation where the institution is located *" rows="3"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-custom style_2" placeholder="16. Phone number of the Secretary of Local Self Government Institution *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-custom style_2" placeholder="17. Distance from Panchayat / Municipality / Corporation headquarters in km *" value="" />
+                                        </div>
+                                        
+                                        <div class="form-group mb-1">
+                                            <input type="text" class="form-control form-control-custom style_2" placeholder="18. Information on payment of inspection fee *" value="" />
+                                        <label style="color:white; font-weight:200; margin-top:10px;">
+                                            In the name of Kerala State Rutronics, Rs. Pay Rs. 1785 / - and enter the name and date of the bank where the payment was made: (Keep a receipt with the details of the payment in the bank)
+                                        </label>
+                                        </div>
+                                        <div class="form-group">
+                                            <h5 class="mb-0" style="color:white; margin-top:49px;">INSTITUTIONAL INFORMATION</h5> <p style="margin-top:0; margin-bottom:35px; color:white;">(Applies to Existing Institutions)</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-custom style_2" placeholder="19. Establishment area (square feet) *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-custom style_2" placeholder="22. Furniture informations *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-custom style_2" placeholder="21. Computer / Projector / Whiteboard *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-custom style_2" placeholder="22. Toilet facility *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-custom style_2" placeholder="23. Number of Current Trainers and  Qualification *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-custom style_2" placeholder="24. Library *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-custom style_2" placeholder="25. Internet / webcam facility  *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-custom style_2" placeholder="26. Printer / Scanner  *" value="" />
+                                        </div>
+                                        
+                                        <!--<input type="submit" class="btnRegister"  value="Apply"/>-->
+                                    </div>
+                                    <div class="col-lg-12" >
+                                    <div class="form-group" style="margin:0 auto; width:270px;">
+                                         <button type="submit" class="thm-btn bg-thm-color-three thm-color-three-shadow btn-rectangle" style=" width:265px;">Apply for inspection
+                                         <i class="fal fa-chevron-right ml-2"></i></button>
+                                    </div>
+                                    </div>
+                                    <!--<div class="form-group w-25" style="margin:0 auto">
+                                            <input type="submit" class="bg-thm-color-three form-control form-control-custom style_2 apply " value="Apply for Inspection" />
+                                        </div>-->
+                                </div></div>
+                            </div>
+                        </div>
+                    </div>
+                     
+                </div>
+
+            </div>
+       </div>     
+</div>
+</section>
+
+
+<div>
+  <label>
+    <input type="checkbox" class="option-input checkbox" checked />
+    Checkbox
+  </label>
+  <label>
+    <input type="checkbox" class="option-input checkbox" />
+    Checkbox
+  </label>
+  <label>
+    <input type="checkbox" class="option-input checkbox" />
+    Checkbox
+  </label>
+</div>
+<div>
+  <label>
+    <input type="radio" class="option-input radio" name="example" checked />
+    Radio option
+  </label>
+  <label>
+    <input type="radio" class="option-input radio" name="example" />
+    Radio option
+  </label>
+  <label>
+    <input type="radio" class="option-input radio" name="example" />
+    Radio option
+  </label>
+</div>
+    <script>
+    function readUrl(input) {
+  
+  if (input.files && input.files[0]) {
+    let reader = new FileReader();
+    reader.onload = (e) => {
+      let imgData = e.target.result;
+      let imgName = input.files[0].name;
+      input.setAttribute("data-title", imgName);
+      console.log(e.target.result);
+    }
+    reader.readAsDataURL(input.files[0]);
+  }
+
+}
+</script>
+<script>
+$(document).ready(function() {
+  var buttonAdd = $("#add-button");
+  var buttonRemove = $("#remove-button");
+  var className = ".dynamic-field";
+  var count = 0;
+  var field = "";
+  var maxFields = 5;
+
+  function totalFields() {
+    return $(className).length;
+  }
+
+  function addNewField() {
+    count = totalFields() + 1;
+    field = $("#dynamic-field-1").clone();
+    field.attr("id", "dynamic-field-" + count);
+    field.children("label").text("Instructor " + count);
+    field.find("input").val("");
+    $(className + ":last").after($(field));
+  }
+
+  function removeLastField() {
+    if (totalFields() > 1) {
+      $(className + ":last").remove();
+    }
+  }
+
+  function enableButtonRemove() {
+    if (totalFields() === 2) {
+      buttonRemove.removeAttr("disabled");
+      buttonRemove.addClass("shadow-sm");
+    }
+  }
+
+  function disableButtonRemove() {
+    if (totalFields() === 1) {
+      buttonRemove.attr("disabled", "disabled");
+      buttonRemove.removeClass("shadow-sm");
+    }
+  }
+
+  function disableButtonAdd() {
+    if (totalFields() === maxFields) {
+      buttonAdd.attr("disabled", "disabled");
+      buttonAdd.removeClass("shadow-sm");
+    }
+  }
+
+  function enableButtonAdd() {
+    if (totalFields() === (maxFields - 1)) {
+      buttonAdd.removeAttr("disabled");
+      buttonAdd.addClass("shadow-sm");
+    }
+  }
+
+  buttonAdd.click(function() {
+    addNewField();
+    enableButtonRemove();
+    disableButtonAdd();
+  });
+
+  buttonRemove.click(function() {
+    removeLastField();
+    disableButtonRemove();
+    enableButtonAdd();
+  });
+});
+</script>
+
+ {% include 'footer.html' %}
+ {% endblock base %}

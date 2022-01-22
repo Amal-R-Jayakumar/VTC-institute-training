@@ -1,0 +1,251 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block base %}
+{% include 'navbar.html' %}
+
+<!-- About Us Start -->
+<section class="section section-bg about_bg about style_2" style="background-image: url({% static 'assets/images/bg/bg_1.png' %}); margin-top:9rem;">
+    <div class="container">
+        <div class="row justify-content-between flex-row-reverse">
+            <div class="col-lg-6">
+                <div class="image_boxes style_2 relative z-1 h-100">
+                    <img src="{% static 'assets/images/about/small_2.png' %}" class="small_img wow fadeInUp" alt="img">
+                    <div class="video_warp style_2 relative z-1 big_img wow fadeInDown">
+                        <img src="{% static 'assets/images/about-video.jpg' %}" alt="img">
+                        <a href="https://www.youtube.com/" class="popup-youtube transform-center justify-content-center d-flex">
+                            <img src="{% static 'assets/images/icons/youtube.png' %}" alt="icon">
+                        </a>
+                    </div>
+                    <!-- elements -->
+                    <img src="{% static 'assets/images/elements/element_22.png' %}" class="element_1" alt="Element">
+                    <img src="{% static 'assets/images/elements/element_23.png' %}" class="element_2 rotate_elem" alt="Element">
+                    <img src="{% static 'assets/images/elements/element_24.png' %}" class="element_3 rotate_elem" alt="Element">
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 mb-md-80">
+                <div class="section-title left-align wow fadeInUp">
+                    <p class="subtitle">
+                        <i class="fal fa-book"></i>
+                        About
+                    </p>
+                    <h3 class="title">VIJAYAVEEDHI</h3>
+                    <span class="p-large">
+                    <p style="text-align:justify;">Vijayaveedhi is a popular project in Kerala which is part of the State Government's 100 Day Action Plan and is being implemented at the Panchayat level as per Government of Kerala Order No. G.O. (Rt) No.1103/2020/ID, Dated Thiruvananthapuram 24-12-2020 formulated by the Department of Commerce and Industry.
+                    <p style="text-align:justify; text-indent: 25px;" class="mb-0">Unemployed youngsters and job seekers are longing for permanent jobs in government departments, in governmental agencies or in public sector. Recruitments to these institutions are based on competitive examinations. Hence the educated job seekers are looking for credible coaching centres to get trained for appearing the competitive examinations. <span class="uppercase">Kerala State Rutronix</span> being a reputed government-controlled training institution can effectively involve in the training programme utilising its rich experience
+                    <span id="dots">...</span>
+                    <span id="about-more"> in conducting various computer and IT based programmes throughout the state. <span class="uppercase">Rutronix</span> will able to provide the training programme whole over the state in a uniform and structured manner affordable to common public. This may give an opportunity to all unemployed youth to compete in the competitive examinations. In this context, a training programme, named- “Vijayaveedhi” has been designed by Rutronix for imparting training to the employment seekers for attending various competitive examinations for the recruitments conducted by KPSC, UPSC, Staff Selection Commission, Banking Service Recruitment Boards, Railway Recruitment Board, various Governmental and Public sector agencies, bodies etc.</span>
+                    </p>
+                    </span>
+                    
+                    <span class="p-medium">
+                    <p style="text-align:justify;">Vijayaveedhi is a popular project in Kerala which is part of the State Government's 100 Day Action Plan and is being implemented at the Panchayat level as per Government of Kerala Order No. G.O. (Rt) No.1103/2020/ID, Dated Thiruvananthapuram 24-12-2020 formulated by the Department of Commerce and Industry.
+                    <p style="text-align:justify; text-indent: 25px;" class="mb-0">Unemployed youngsters and job seekers are longing for permanent jobs in government departments, in governmental agencies or in public sector. Recruitments to these institutions are based on competitive examinations. Hence the educated job seekers are looking for credible coaching centres to get trained for appearing
+                    <span id="dots-2">...</span>
+                    <span id="about-more-2"> the competitive examinations. <span class="uppercase">Kerala State Rutronix</span> being a reputed government-controlled training institution can effectively involve in the training programme utilising its rich experience in conducting various computer and IT based programmes throughout the state. <span class="uppercase">Rutronix</span> will able to provide the training programme whole over the state in a uniform and structured manner affordable to common public. This may give an opportunity to all unemployed youth to compete in the competitive examinations. In this context, a training programme, named- “Vijayaveedhi” has been designed by Rutronix for imparting training to the employment seekers for attending various competitive examinations for the recruitments conducted by KPSC, UPSC, Staff Selection Commission, Banking Service Recruitment Boards, Railway Recruitment Board, various Governmental and Public sector agencies, bodies etc.</span>
+                    </p>
+                    </span>
+                    
+                </div>
+               
+                <button onclick="myFunction()" id="myBtn" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle wow fadeInUp">
+                    Read More
+                </button>
+                <button onclick="myFunctionTwo()" id="myBtn-2" class="thm-btn bg-thm-color-two thm-color-two-shadow btn-rectangle wow fadeInUp">
+                    Read More
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About Us End -->
+
+<!-- About Start -->
+<section class="section about_inner" style="padding-bottom:40px;">
+    <div class="container">
+        <div class="row ">
+            
+            <div class="col-lg-12">
+                <div class="section-title left-align wow fadeInDown">
+                    <p class="subtitle">
+                        <i class="fal fa-book"></i>
+                        What we do
+                    </p>
+                    <h3 class="title">We Care About Your Life For Better Future</h3>
+                    <!--<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae inventore</p>-->
+                </div>
+                <ul class="about_list row">
+                    <li class="col-lg-6 wow fadeInUp we-do">
+                        <div class="icon">
+                            <img src="{% static 'assets/images/icons/1.png' %}" alt="img" class="image-fit">
+                        </div>
+                        <div class="text">
+                            <h6 class="mb-2">100% results-oriented training and coaching guidelines</h6>
+                            <p class="mb-0">Results-oriented coaching and an exercise strategy are sure to bring you  success and we provides the best systematic training and support. </p>
+                        </div>
+                    </li>
+                    <li class="col-lg-6 wow fadeInDown we-do">
+                        <div class="icon">
+                            <img src="{% static 'assets/images/icons/3.png' %}" alt="img" class="image-fit">
+                        </div>
+                        <div class="text">
+                            <h6 class="mb-2">Face to Face Engagement and Individual Mentor Support</h6>
+                            <p class="mb-0">Students have the opportunity to interact with teachers and find answers to questions. Through this, students can gain more knowledge and confidence. </p>
+                        </div>
+                    </li>
+                    <li class="col-lg-6 wow fadeInUp we-do">
+                        <div class="icon">
+                            <img src="{% static 'assets/images/icons/2.png' %}" alt="img" class="image-fit">
+                        </div>
+                        <div class="text">
+                            <h6 class="mb-2">Feel like being in our Classroom</h6>
+                            <p class="mb-0">Classes handled by Expert Teaching Faculties. Online classes will make you feel like a normal class and help you to study and get a job better.</p>
+                        </div>
+                    </li>
+                    <li class="col-lg-6 wow fadeInDown we-do">
+                        <div class="icon">
+                            <img src="{% static 'assets/images/icons/4.png' %}" alt="img" class="image-fit">
+                        </div>
+                        <div class="text">
+                            <h6 class="mb-2">Latest updated Course Materials</h6>
+                            <p class="mb-0">Students get the latest and updated Book Materials & Handouts prepared produced by the experienced teachers and research team.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About End -->
+
+ <!-- Counter Box Start -->
+<div class="section-padding pt-0">
+    <div class="container">
+        <div class="row">
+            <!-- Box -->
+            <div class="col-lg-6 col-xl-3 col-md-6">
+                <div class="counter_box wow fadeInUp" data-wow-delay=".10ms">
+                    
+                    <div class="text">
+                        <div class="icon abt-icon" style="margin:0 auto;">
+                        <img src="{% static 'assets/images/icons/icon_4.png' %}" alt="icon" class="image-fit">
+                    </div>
+                        <p class="mb-0">Online Live Training</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Box -->
+            <!-- Box -->
+            <div class="col-lg-6 col-xl-3 col-md-6">
+                <div class="counter_box wow fadeInDown" data-wow-delay=".20ms">
+                   
+                    <div class="text">
+                        
+                           <div class="icon abt-icon" style="margin:0 auto;">
+                        
+                        <img src="{% static 'assets/images/icons/icon_8.png' %}" style="width:83%;" alt="icon" class="image-fit">
+                            </div>
+                        
+                        <p class="mb-0">Online Recorded Training</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Box -->
+            <!-- Box -->
+            <div class="col-lg-6 col-xl-3 col-md-6">
+                <div class="counter_box wow fadeInUp" data-wow-delay=".30ms">
+                    
+                    <div class="text">
+                       <div class="icon abt-icon" style="margin:0 auto;">
+                        <img src="{% static 'assets/images/icons/icon_1.png' %}" alt="icon" class="image-fit">
+                    </div>
+                        <p class="mb-0">Classroom Training</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Box -->
+            <!-- Box -->
+            <div class="col-lg-6 col-xl-3 col-md-6">
+                <div class="counter_box wow fadeInDown" data-wow-delay=".40ms">
+                    
+                    <div class="text">
+                        <div class="icon abt-icon" style="margin:0 auto;">
+                        
+                        <img src="{% static 'assets/images/icons/icon_6.png' %}" style="width:80%;" alt="icon" class="image-fit">
+                    </div>
+                        <p class="mb-0">Vijayaveedhi Books</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Box -->
+        </div>
+    </div>
+</div>
+<!-- Counter Box End -->
+
+
+
+<!-- Cta Start -->
+<div class="cta_box style_2">
+    <div class="container relative z-2">
+        <div class="bg-thm-color-two cta_box_inner z-2 mb-negative">
+            <img src="{% static 'assets/images/elements/shape.png' %}" alt="shape" class="shape_1 zoom-fade">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-6">
+                    <div class="text_block wow fadeInLeft">
+                        <div class="section-title left-align white">
+                            <p class="subtitle">
+                                <i class="fal fa-book"></i>
+                                Get Admission
+                            </p>
+                            <h3 class="title">The Route to the Right Career</h3>
+                            <a href="#" class="thm-btn bg-thm-color-three thm-color-three-shadow btn-rectangle">Enroll Now <i class="fal fa-chevron-right ml-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="image_box relative z-1 wow fadeInRight">
+                        <img src="{% static 'assets/images/elements/square_shape.png' %}" alt="shape" class="shape_2 rotate_elem">
+                        <img src="{% static 'assets/images/admission (3).png' %}" alt="img" class="image-fit">
+                        <div class="arrows slideRight">
+                            <div class="arrow"></div>
+                            <div class="arrow"></div>
+                            <div class="arrow"></div>
+                            <div class="arrow"></div>
+                            <div class="arrow"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="arrows to_up slideTop">
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+        </div>
+    </div>
+</div>
+<!-- Cta End -->
+<!-- Plane Star
+<div class="bg-thm-color-two plane_box relative z-1">
+    <div class="container relative z-1">
+        <div class="row justify-content-center">
+            <div class="col-xl-9 col-lg-11 relative z-1">
+                <img src="{% static 'assets/images/elements/element_6.png' %}" class="element_1 rotate_elem" alt="Element">
+                <h2 class="thm-color-white">The Route to the Right Career</h2>
+            </div>
+        </div>
+        <img src="{% static 'assets/images/elements/element_7.png' %}" class="element_2 zoom-fade" alt="Element">
+    </div>
+</div>
+ Plane End -->
+
+
+
+
+{% include 'footer.html' %}
+<a href="#" data-target="html" class="back-to-top ft-sticky">
+    <i class="fal fa-long-arrow-up"></i>
+
+  {% endblock base %}

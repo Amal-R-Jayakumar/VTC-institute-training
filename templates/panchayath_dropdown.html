@@ -1,0 +1,4 @@
+<option value="">---------</option>
+{% for panchayath in panchayaths %}
+<option value="{{ panchayath.pk }}">{{ panchayath.name }}</option>
+{% endfor %}

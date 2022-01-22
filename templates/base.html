@@ -1,0 +1,147 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Vijayaveedhi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Description website">
+    <meta name="author" content="Maksym Blank">
+    <meta name="keywords" content="website, with, meta, tags">
+    <meta name="robots" content="noindex, follow">
+    <meta name="revisit-after" content="5 month">
+    <meta name="image" content="https://ownwebsite.com/">
+    <meta name="og:title" content="Title website">
+    <meta name="og:description" content="Description website">
+    <meta name="og:image" content="https://ownwebsite.com/">
+    <meta name="og:site_name" content="My Website">
+    <meta name="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Title website">
+    <meta name="twitter:description" content="Description website">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/V icon.svg' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- Css -->
+    <link href="{% static 'assets/css/plugins/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/plugins/slick.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/plugins/magnific-popup.css' %}" rel="stylesheet">
+    
+    <link href="{% static 'assets/fonts/flaticon/flaticon.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/fonts/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/plugins/leaflet.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/responsive.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/plugins/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/slick.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/book.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/whatsapp.css' %}" rel="stylesheet">
+    {% comment %}
+    <!-- <link href="{% static 'assets/css/vtclist/style.css' %}" rel="stylesheet"> -->
+    {% endcomment %}
+    
+    
+    
+
+    <style>
+        #blemish {
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+
+        .form-control {
+            font-size: .85rem;
+        }
+
+        .custom-select {
+            font-size: .85rem;
+        }
+    </style>
+
+</head>
+
+<body>
+{% block base %}
+
+{% endblock base %}
+
+<!-- Scripts -->
+
+<script src="{% static 'assets/js/plugins/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static 'assets/js/plugins/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/js/plugins/slick.min.js' %}"></script>
+<script src="{% static 'assets/js/plugins/imagesloaded.min.js' %}"></script>
+<script src="{% static 'assets/js/plugins/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'assets/js/plugins/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'assets/js/plugins/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'assets/js/plugins/jquery.inview.min.js' %}"></script>
+<script src="{% static 'assets/js/plugins/jquery.easypiechart.js' %}"></script>
+<script src="{% static 'assets/js/plugins/jquery.countdown.min.js' %}"></script>
+
+<script src="{% static 'assets/js/plugins/wow.min.js' %}"></script>
+<script src="{% static 'assets/js/custom.js' %}"></script>
+<script src="{% static 'assets/js/brand/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/js/brand/slick.min.js' %}"></script>
+<script src="{% static 'assets/js/brand/metisMenu.min.js' %}"></script>
+<script src="{% static 'assets/js/brand/jquery.meanmenu.min.js' %}"></script>
+
+<script src="{% static 'assets/js/plugins/leaflet.js' %}"></script>
+<script src="{% static 'assets/js/map.js' %}"></script>
+    <!-- Form -->
+<script src="{% static 'assets/js/plugins/jquery.validate.min.js' %}"></script>
+<script src="{% static 'assets/js/form.js' %}"></script>
+
+
+<script type="text/javascript">
+$(window).on('load', function () {
+    setTimeout(function () {
+        $('#myModal').modal('show');
+    }, 2000);
+
+});
+</script>
+
+<script type="text/javascript">
+$('#btn-form, #btn-form2, #btn-form3, #btn-form4, #btn-form5, #btn-form6, #btn-form7, #btn-form8, #btn-form9').click(function () {
+    $('#myModal').modal('show');
+});
+</script>
+<script>
+    function myFunction() {
+      var dots = document.getElementById("dots");
+      var moreText = document.getElementById("about-more");
+      var btnText = document.getElementById("myBtn");
+    
+      if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.innerHTML = "Read more"; 
+        moreText.style.display = "none";
+      } else {
+        dots.style.display = "none";
+        btnText.innerHTML = "Read less"; 
+        moreText.style.display = "inline";
+      }
+    }
+    </script>
+            <script>
+    function myFunctionTwo() {
+      var dots = document.getElementById("dots-2");
+      var moreText = document.getElementById("about-more-2");
+      var btnText = document.getElementById("myBtn-2");
+    
+      if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.innerHTML = "Read more"; 
+        moreText.style.display = "none";
+      } else {
+        dots.style.display = "none";
+        btnText.innerHTML = "Read less"; 
+        moreText.style.display = "inline";
+      }
+    }
+    </script>
+    
+</body>
+
+</html>

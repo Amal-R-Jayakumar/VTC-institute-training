@@ -1,0 +1,371 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block base %}
+{% include 'navbar.html' %}
+
+
+    <!-- About Start -->
+    <section class="section-half about_inner" style="margin-top: 10rem;">
+        <div class="container">
+            <div class="row ">
+                <div class="col-lg-6">
+                    <div class="image_box shadow_1 mb-md-80 wow fadeInLeft">
+                        <img src="{% static 'assets/images/about/about.jpg' %} " alt="img" class="image-fit">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="section-title left-align wow fadeInDown">
+                        
+                        <h3 class="title">Vijayaveedhi Training Center</h3>
+                        <p>Vijayaveedhi is a popular project in Kerala which is part of the State Government's 100 Day Action Plan and is being implemented at the Panchayat level as per Government of Kerala Order No. G.O. (Rt) No.1103/2020/ID, Dated Thiruvananthapuram 24-12-2020 formulated by the Department of Commerce and Industry.
+                            Training to select candidates for vacancies in State / Central Government Institutions to enable them to appear for competitive examinations conducted by PSC, UPSC, Banking Service Recruitment Board, Railway Recruitment Board, Staff Selection Commission etc. The project aims to cater to everyone, both urban and rural, at minimal cost.</p>
+                        <p>Vijayaveedhi Training Centers will be sanctioned in one panchayat, two in municipalities and three in corporations. Individuals with existing institutions and new entrepreneurs can apply for Vijayavithi Learning Centers. Applications can be submitted to colleges, schools, parallel colleges, Akshaya e-centers, women's co-operative societies, trust-owned institutions, partnerships, other individual institutions and new entrepreneurs.
+                        Permission for VTC can be obtained on the basis of scrutiny of applications and direct scrutiny by the concerned officials. Priority will be given in allocating study centers to women, transgender people, persons with disabilities and expatriates who have lost their jobs due to the covid crisis.
+                        </p>
+                     
+                    </div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About End -->
+<!--
+<form method="POST">
+<div>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save" >
+</form>
+
+
+<p>
+
+{% if my_text == null %}
+    <h1>Hello world</h1>
+{% endif %}
+</p>
+-->
+   <!-- Section Start -->
+    <section class="portfolio_details" style="padding-bottom:20px;">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-8">
+                    <div class="text mb-md-80">
+                        <h3 class="fw-600 title">How to Apply VTC Affiliation</h3>
+                        <p>The application form embedded in the website can be completed online or the application form can be downloaded and submitted by post. One thousand seven hundred and eighty five rupees (Rs.1,770.00, non-refundable rate) including the examination fee of Rs.1500 / - and 18% tax along with the application. The application should be submitted along with the details of the transfer of the amount after payment to the account of Kerala State Rutronics contained in the application form. </p>
+                       
+                        <p>If the institutions are present, that information should be included in the application. For new entrepreneurs, it is sufficient to include the location and building where the Vijayavithi Learning Center is intended to be set up.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="sidebar style_3">
+                        <div class="sidebar_widget">
+                            <h5 class="widget_title">Bank Account Details</h5>
+                            <div class="sidebar_widget_inner">
+                                <ul class="info_widget">
+                                    <li>
+                                        <span>Bank</span>
+                                       Federal Bank
+                                    </li>
+                                    <li>
+                                        <span>Branch</span>
+                                        Sasthamangalam
+                                    </li>
+                                    <li>
+                                        <span>Account Number</span>
+                                        21780200001388
+                                    </li>
+                                    <li>
+                                        <span>Fee</span>
+                                        ₹ 1,770/- (non-refundable)
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <section class="section-bottom portfolio_details">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-8">
+                    <div class="text mb-md-80">
+                        
+                        
+                        <p>Applicants by post should write <b>'Application for Vijayaveedhi Training Centers'</b> on the outside of the cover. Address to which application should be sent</p>
+                        <b>Notes:</b>
+                        <p style="margin-bottom:10px;">1. If the application form is completed on the first and second pages, it should be sent online or by post to the Managing Director, Kerala State Rutronics, C-11, Padma Shri, Ilankam Gardens, Vellayambalam, Thiruvananthapuram-10 by January 25, 2022.</p>
+                        <p>2. Existing companies and new entrepreneurs can apply. If approved, the applicant will be required to arrange the basic facilities as stated on the third page of the application form.</p>
+                        <a href="#online" class="thm-btn bg-thm-color-three thm-color-three-shadow btn-rectangle mr-3">Apply Online <i class="fal fa-chevron-right ml-2"></i></a>
+                        <a href="{% static 'assets/download/Application form.pdf' %}" download class="thm-btn bg-thm-color-three thm-color-three-shadow btn-rectangle">Apply by Post <i class="fal fa-chevron-right ml-2"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="sidebar style_3">
+                        <div class="sidebar_widget">
+                            <h5 class="widget_title">Address</h5>
+                            <div class="sidebar_widget_inner">
+                                <ul class="info_widget">
+                                    <li>
+                                        
+                                      Managing Director, Kerala State Rutronics
+                                    </li>
+                                    <li>
+                                       
+                                    </li>
+                                    <li>
+                                       "Padmashree", C-11, Vellayambalam
+                                    </li>
+                                    <li>
+                                        Sasthamangalam P.O
+                                    </li>
+                                    <li>
+                                        Thiruvananthapuram - 695 010.
+                                    </li>
+                                    <li style="color:#566780;">
+                                        <i>For project related queries</i>
+                                    </li>
+                                     <li>
+                                        <span>Contact</span>
+                                        95670 97833, 83019 39306
+                                    </li>
+                                    <li>
+                                        <span>E-mail</span>
+                                        pro.rutronix@kerala.gov.in
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section End 
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="submit">
+    </form>
+  -->
+
+   <!-- Quote Form Start -->
+    <section class="section-padding pb-0 section-bg quote_form_sec elements relative z-1"
+             id="online" style="background-image: url({% static 'assets/images/bg/bg_7.jpg' %});">
+                     <div class=" container relative z-1">
+    <div class="row flex-lg-row-reverse align-items-end justify-content-between">
+        <div class="col-xl-5 col-lg-6 mb-md-80 wow fadeInRight" data-wow-delay=".30ms">
+            <img src="{% static 'assets/images/request.png' %}" style="width:800px;" alt="img" class="image-fit-contain">
+                </div>
+                <div class=" col-lg-6">
+            <div class="quote_box" style="margin-bottom:60px;">
+                <div class="section-title left-align white wow fadeInDown">
+                    <p class="subtitle mb-4">
+                        <i class="fal fa-book"></i>
+                        Get Affiliation
+                    </p>
+                    <h3 class="title">VTC Affiliation Request</h3>
+                </div>
+                <form class="wow fadeInUp" method="POST">
+                    <div class="row">
+                    {% csrf_token %}
+                        <div class="col-lg-6">
+                           <div class="form-group">
+                                {{ form.owner_name }}
+                                <i class="fal fa-user"></i>
+                            </div>    
+                        </div>
+                        <div class="col-lg-6">
+                           <div class="form-group">       
+                                {{ form.email }}
+                                <i class="fal fa-envelope"></i>
+                            </div>    
+                        </div>
+                        <div class="col-lg-6">
+                           <div class="form-group">       
+                                {{ form.contact_number }}
+                                <i class="fal fa-phone"></i>
+                            </div>    
+                        </div>
+                        <div class="col-lg-6">
+                           <div class="form-group">       
+                                {{ form.location }}
+                                <i class="fal fa-map-marker-alt"></i>
+                            </div>    
+                        </div>
+                        <div class="col-lg-6">
+                           <div class="form-group">       
+                                <!--<select class="form-control form-control-custom style_2" name="#">
+                                    <option selected>Localbody Type</option>
+                                    <option value="option 1" style="color: #114f6f;">Corporation 
+                                    </option>
+                                    <option value="option 2" style="color: #114f6f;">Municipality
+                                    </option>
+                                    <option value="option 1" style="color: #114f6f;">Panchayat
+                                    </option>
+                                </select>-->
+                                {{ form.localbodytype }}
+                                <i class="fal fa-chevron-down"></i>
+                            </div>    
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                {{ form.localbodyname }}
+                                <i class="fal fa-map-marked-alt"></i>
+                            </div>
+                        </div>
+                        <!--<div class="col-lg-6">
+                           <div class="form-group">       
+                                {{ form.district }}
+                            </div>    
+                        </div>-->
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                            {{ form.district }}
+                            <i class="fal fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                {{ form.pincode }}
+                                <i class="fal fa-marker"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <button type="submit"
+                                    class="thm-btn bg-thm-color-three thm-color-three-shadow btn-rectangle">Send Request
+                                <i class="fal fa-chevron-right ml-2"></i></button>
+                                <!--<input type="submit" value="Save" >-->
+                        </div>
+                        <!--
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="text" name="#" class="form-control form-control-custom style_2"
+                                       placeholder="Applicant Name" autocomplete="off"/>
+                                <i class="fal fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="email" name="#" class="form-control form-control-custom style_2"
+                                       placeholder="Email Address" autocomplete="off"/>
+                                <i class="fal fa-envelope"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="tel" name="#" class="form-control form-control-custom style_2"
+                                       placeholder="Phone Number" autocomplete="off"/>
+                                <i class="fal fa-phone"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="text" name="#" class="form-control form-control-custom style_2"
+                                       placeholder="Center Location" autocomplete="off"/>
+                                <i class="fal fa-map-marker-alt"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <select class="form-control form-control-custom style_2" name="#">
+                                    <option selected>Localbody Type</option>
+                                    <option value="option 1" style="color: #114f6f;">Corporation 
+                                    </option>
+                                    <option value="option 2" style="color: #114f6f;">Municipality
+                                    </option>
+                                    <option value="option 1" style="color: #114f6f;">Panchayat
+                                    </option>
+                                </select>
+                                <i class="fal fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="text" name="#" class="form-control form-control-custom style_2"
+                                       placeholder="Localbody Name" autocomplete="off"/>
+                                <i class="fal fa-quote-right"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <select class="form-control form-control-custom style_2" name="#">
+                                    <option selected>District</option>
+                                    <option value="option 1" style="color: #114f6f;">Thiruvananthapuram </option>
+                                    <option value="option 2" style="color: #114f6f;">Kollam</option>
+                                    <option value="option 3" style="color: #114f6f;">Pathanamthitta</option>
+                                    <option value="option 4" style="color: #114f6f;">Alappuzha</option>
+                                    <option value="option 5" style="color: #114f6f;">Kottayam  </option>
+                                    <option value="option 6" style="color: #114f6f;">Idukki  </option>
+                                    <option value="option 7" style="color: #114f6f;">Ernakulam </option>
+                                    <option value="option 8" style="color: #114f6f;">Thrissur </option>
+                                    <option value="option 9" style="color: #114f6f;">Palakkad </option>
+                                    <option value="option 10" style="color: #114f6f;">Malappuram </option>
+                                    <option value="option 11" style="color: #114f6f;">Kozhikode </option>
+                                    <option value="option 12" style="color: #114f6f;">Wyanad </option>
+                                    <option value="option 13" style="color: #114f6f;">Kannur  </option>
+                                    <option value="option 14" style="color: #114f6f;">Kasargode   </option>
+                                </select>
+                                <i class="fal fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="text" name="#" class="form-control form-control-custom style_2"
+                                       placeholder="Pincode" autocomplete="off"/>
+                                <i class="fal fa-marker"></i>
+                            </div>
+                        </div>-->
+                        <!--<div class="col-lg-12">
+                            <div class="form-group">
+                                <textarea class="form-control form-control-custom style_2" placeholder="Write Message"
+                                          rows="5"></textarea>
+                            </div>
+                        </div>-->
+                        <!--
+                        <div class="col-lg-12">
+                            <button type="submit"
+                                    class="thm-btn bg-thm-color-three thm-color-three-shadow btn-rectangle">Send Request
+                                <i class="fal fa-chevron-right ml-2"></i></button>
+                        </div>
+                        -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <img src="{% static 'assets/images/elements/element_39.png' %}" alt="element" class="element_1 rotate_elem">
+    <img src="{% static 'assets/images/elements/element_40.png' %}" alt="element" class="element_2 zoom-fade">
+    <img src="{% static 'assets/images/elements/element_41.png' %}" alt="element" class="element_3 rotate_elem">
+    <img src="{% static 'assets/images/elements/element_42.png' %}" alt="element" class="element_4 rotate_elem">
+    </div>
+    </section>
+    <!-- Quote Form End -->
+
+
+    <script>
+    function readUrl(input) {
+  
+  if (input.files && input.files[0]) {
+    let reader = new FileReader();
+    reader.onload = (e) => {
+      let imgData = e.target.result;
+      let imgName = input.files[0].name;
+      input.setAttribute("data-title", imgName);
+      console.log(e.target.result);
+    }
+    reader.readAsDataURL(input.files[0]);
+  }
+
+}
+</script>
+
+ {% include 'footer.html' %}
+ {% endblock base %}

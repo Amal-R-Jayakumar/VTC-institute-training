@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block base %}
+{% include 'navbar.html' %}
+
+<div class="row ml-4" style="margin-top:12rem;">
+{% for q in qs %}
+<ul>
+    <li>{{forloop.counter}}.  {{q.question}}</li>
+    <li class="ml-4">Option 1: {{q.opt1}}</li>
+    <li class="ml-4">Option 2: {{q.opt2}}</li>
+    <li class="ml-4">Option 3: {{q.opt3}}</li>
+    <li class="ml-4">Corect Answer: {{q.correct_ans}}</li>
+</ul>
+    
+{% endfor %}
+</div>
+
+{% endblock base %}

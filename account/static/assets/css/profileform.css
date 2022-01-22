@@ -1,0 +1,198 @@
+.formdiv{text-align:left; margin-bottom:25px}
+.card_header, .formbutton{ background-color:#114f6f; color:#fff}
+
+.form-check-input {
+    position: absolute;
+  margin-top: 7px;}
+.border-radius{border-radius:50px !important}
+textarea.border-radius{ border-radius:10px !important}
+.formbutton:hover{opacity:.9}
+.socialMediaIcons a i{color:#114f6f;
+  font-size:18px;
+text-shadow:1px 1px 5px #00000050;
+  transition:.3s all ease-in-out;
+cursor:pointer}
+.socialMediaIcons a i:hover{ 
+  transition:.3s all ease-in-out;
+			-webkit-transform: scale(1.5) ;
+			-moz-transform: scale(1.5) ;
+			-o-transform: scale(1.5) ;
+			-ms-transform: scale(1.5);
+			transform: scale(1.5) ;}
+
+.custom-control-input{transition:.5s all ease-in-out}
+
+
+
+.formdiv2{text-align:left; margin-bottom:25px}
+.card_header{ background-color:#114f6f; color:#fff}
+.formbuttonOutline{ border:1px solid #114f6f !important; color:#818181;background:transparent;
+transition: background .4s ease-in-out}
+.formbuttonOutline:hover{background:#114f6f; color:#fff; transition: background .4s ease-in-out }
+
+.form-check-input {
+    position: absolute;
+  margin-top: 7px;}
+.formbutton:hover{opacity:.9}
+.formtwo .socialMediaIcons a{
+  display:inline-block;
+  height:30px; width:30px;
+  line-height:25px;
+  text-shadow:1px 1px 5px #00000050;
+}
+.formtwo .socialMediaIcons a i{color:#fff;
+  font-size:18px;
+  transition:.3s all ease-in-out;
+cursor:pointer}
+.formtwo .socialMediaIcons a i:hover{ 
+  transition:.3s all ease-in-out;
+			-webkit-transform: scale(.6) ;
+			-moz-transform: scale(.6) ;
+			-o-transform: scale(.6) ;
+			-ms-transform: scale(.6);
+			transform: scale(.6) ;}
+
+.custom-control-input{transition:.5s all ease-in-out}
+.formtwo .btn-fb{background:#2858c1}
+.formtwo .btn-tw{background:#03A9F4}
+.formtwo .btn-you{background:#ff0000}
+
+
+.formdiv2{text-align:left; margin-bottom:25px}
+.card_header{ background-color:#114f6f; color:#fff}
+.formbuttonOutline{ border:1px solid #114f6f !important; color:#818181;background:transparent;
+transition: background .4s ease-in-out}
+.formbuttonOutline:hover{background:#114f6f; color:#fff; transition: background .4s ease-in-out }
+
+.form-check-input {
+    position: absolute;
+  margin-top: 7px;}
+.formbutton:hover{opacity:.9}
+.formtwo .socialMediaIcons a{
+  display:inline-block;
+  height:30px; width:30px;
+  line-height:25px;
+  text-shadow:1px 1px 5px #00000050;
+}
+.formtwo .socialMediaIcons a i{color:#fff;
+  font-size:18px;
+  transition:.3s all ease-in-out;
+cursor:pointer}
+.formtwo .socialMediaIcons a i:hover{ 
+  transition:.3s all ease-in-out;
+			-webkit-transform: scale(.6) ;
+			-moz-transform: scale(.6) ;
+			-o-transform: scale(.6) ;
+			-ms-transform: scale(.6);
+			transform: scale(.6) ;}
+
+.custom-control-input{transition:.5s all ease-in-out}
+.formtwo .btn-fb{background:#2858c1}
+.formtwo .btn-tw{background:#03A9F4}
+.formtwo .btn-you{background:#ff0000}
+
+
+.formdiv2{text-align:left; margin-bottom:25px}
+.card_header{ background-color:#114f6f; color:#fff}
+.formbuttonOutline{ border:1px solid #114f6f !important; color:#818181;background:transparent;
+transition: background .4s ease-in-out}
+.formbuttonOutline:hover{background:#114f6f; color:#fff; transition: background .4s ease-in-out }
+
+.form-check-input {
+    position: absolute;
+  margin-top: 7px;}
+.formbutton:hover{opacity:.9}
+.formtwo .socialMediaIcons a{
+  display:inline-block;
+  height:30px; width:30px;
+  line-height:25px;
+  text-shadow:1px 1px 5px #00000050;
+}
+.formtwo .socialMediaIcons a i{color:#fff;
+  font-size:18px;
+  transition:.3s all ease-in-out;
+cursor:pointer}
+.formtwo .socialMediaIcons a i:hover{ 
+  transition:.3s all ease-in-out;
+			-webkit-transform: scale(.6) ;
+			-moz-transform: scale(.6) ;
+			-o-transform: scale(.6) ;
+			-ms-transform: scale(.6);
+			transform: scale(.6) ;}
+
+.custom-control-input{transition:.5s all ease-in-out}
+.formtwo .btn-fb{background:#2858c1}
+.formtwo .btn-tw{background:#03A9F4}
+.formtwo .btn-you{background:#ff0000}
+
+
+.formdiv3{text-align:left; margin-bottom:25px}
+.formdiv3 input, .formdiv3 select, .formdiv3 textarea{ border-radius:0; border-top:0; border-left:0; border-right:0;}
+.card_header{ background-color:#114f6f; color:#fff}
+.formbuttonOutline{ border:1px solid #114f6f !important; color:#818181;background:transparent;
+transition: background .4s ease-in-out}
+.formbuttonOutline:hover{background:#114f6f; color:#fff; transition: background .4s ease-in-out }
+
+.form-check-input {
+    position: absolute;
+  margin-top: 7px;}
+
+.floatinglabel:placeholder-shown + label {
+  cursor: text;
+  max-width: 66.66%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transform-origin: left bottom;
+  transform: translate(0, -24px) scale(1);
+}
+
+.floatinglabel:not(:placeholder-shown) + label,
+.floatinglabel:focus + label {
+  transform: translate(0, -52px) scale(1.1);
+  cursor: pointer;
+}
+.floatinglabel::-webkit-input-placeholder {
+  opacity: 0 !important;
+  transition: inherit;
+}
+.floatinglabel:focus{ 
+  outline: 0 !important;
+    border:none !important;
+  border-bottom: 1px solid #ced4da !important;
+  box-shadow:none !important;
+}
+label, input {
+  transition: all 0.2s;
+  touch-action: manipulation;
+}
+
+input:focus::-webkit-input-placeholder {
+  opacity: 1 !important;
+}
+.formthree .formbutton{ border-radius:50px}
+.formbutton:hover{opacity:.9}
+.formthree .socialMediaIcons a{
+  display:inline-block;
+  height:30px; width:30px;
+  line-height:25px;
+  text-shadow:1px 1px 5px #00000050;
+}
+.formthree .socialMediaIcons a i{color:#fff;
+  font-size:18px;
+  transition:.3s all ease-in-out;
+cursor:pointer}
+.formthree .socialMediaIcons a i:hover{ 
+  transition:.3s all ease-in-out;
+			-webkit-transform: scale(.6) ;
+			-moz-transform: scale(.6) ;
+			-o-transform: scale(.6) ;
+			-ms-transform: scale(.6);
+			transform: scale(.6) ;}
+
+.custom-control-input{transition:.5s all ease-in-out}
+.formthree .btn-fb{background:#2858c1; border-radius:50px}
+.formthree .btn-tw{background:#03A9F4;border-radius:50px}
+.formthree .btn-you{background:#ff0000;border-radius:50px}
+
+
